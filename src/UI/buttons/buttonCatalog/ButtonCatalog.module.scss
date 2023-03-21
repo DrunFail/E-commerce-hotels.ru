@@ -1,0 +1,24 @@
+@import '../../../styles/mixins';
+
+.catalog {
+    @include primary-button;
+    font-size: clamp(0.6rem, 1vw, 0.875rem);
+    font-weight: 700;
+    border-radius: 79px;
+    column-gap: 12px;
+    inline-size: clamp(7.5rem, 13.7vw, 12rem);
+    aspect-ratio: 192/59;
+
+    & svg {
+        inline-size: 15px;
+        aspect-ratio: 1/1;
+        stroke: var(--clr-white);
+    }
+}
+@media only screen and (max-width: 50em) {
+
+    .catalog {
+    @include mobile-header-button;
+    border-inline-end: 1px dotted var(--clr-dark-blue);
+    }
+}

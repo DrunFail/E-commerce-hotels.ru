@@ -1,0 +1,41 @@
+.cart {
+    display: inline-grid;
+    grid-template-areas: 'img main-text' 'img desc-text';
+    grid-template-columns: 1.4fr 2fr;
+    column-gap: 28px;
+    max-width: 138px;
+
+    & svg {
+        grid-area: img;
+        max-inline-size: 100%;
+        aspect-ratio: 40/28;
+    }
+
+    p:nth-child(2) {
+        grid-area: main-text;
+        font-size: clamp(0.5rem, 1vw, 0.75rem);
+        font-weight: 300;
+    }
+
+    p:last-child {
+        grid-area: desc-text;
+        font-size: clamp(0.6rem, 1vw, 0.875rem);
+        font-weight: 600;
+    }
+}
+
+@media only screen and (max-width: 50em) {
+    .cart {
+        grid-template-areas: 'img';
+        grid-template-columns: 1fr;
+
+        & > svg {
+            height: 41px;
+            aspect-ratio: 1/1;
+        }
+
+        p {
+            display: none;
+        }
+    }
+}
