@@ -1,0 +1,16 @@
+@import '../../../styles/mixins';
+
+.download {
+    @include primary-button;
+    border-radius: 79px;
+    font-size: clamp(0.6rem, 1vw, 0.875rem);
+    font-weight: 700;
+    column-gap: 12px;
+    inline-size: clamp(6rem, 14.3vw, 12.5rem);
+    aspect-ratio: 200/59;
+
+    & svg {
+        inline-size: 17px;
+        aspect-ratio: 1/1;
+    }
+}

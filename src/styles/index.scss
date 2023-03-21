@@ -7,10 +7,10 @@
     @each $color, $value in $colors {
         --clr-#{$color}: #{$value};
     }
+    --max-width: 1400px;
 }
 
 body{
-    max-inline-size: 1400px;
-    margin-inline: auto;
+    
 }
  
