@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import data from '../../../fakeData/data.json';
+import { filterOptions } from '../../filters/constants';
+import FilterListRow from '../../filters/filterListRow/FilterListRow';
 import { ProductItem } from '../interfaces/interfaces';
 import ProductListItem from '../productListItem/ProductListItem';
 import styles from './ProductList.module.scss';
@@ -9,9 +11,12 @@ export default function ProductList() {
 
 
     return (
-        <section className={styles.section }>
+        <>
+        <section className={styles.section}>
+      
             {productItems.map(item => <ProductListItem key={item.code} item={item } />) }
         </section>
-
+        
+        </>
     );
 }

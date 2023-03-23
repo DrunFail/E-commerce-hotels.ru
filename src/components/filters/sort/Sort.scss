@@ -1,0 +1,47 @@
+.sort-container {
+    display: flex;
+    column-gap: 5px;
+
+
+    & > p{
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+
+    .button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+
+        button {
+            border: none;
+            background-color: transparent;
+            font-size: 16px;
+        }
+
+        .visible {
+            position: absolute;
+            background-color: var(--clr-white);
+            display: grid;
+            grid-auto-columns: max-content;
+            row-gap: 5px;
+            top: 0;
+            padding-inline: 5px;
+            z-index: 1;
+        }
+
+        .offscreen {
+            display: none;
+        }
+    }
+
+    .triangle {
+        height: 0;
+        width: 0;
+        border-style: solid;
+        border-width: 7px 3.5px 0 3.5px;
+        border-color: black transparent transparent transparent;
+    }
+}

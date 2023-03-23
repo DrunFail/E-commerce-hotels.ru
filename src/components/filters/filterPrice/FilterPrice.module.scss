@@ -1,0 +1,17 @@
+.filter {
+    display: grid;
+    row-gap: 16px;
+    grid-auto-rows: max-content;
+
+    .inputs {
+        display: flex;
+        column-gap: 10px;
+
+        input {
+            inline-size: 105px;
+            block-size: 23px;
+            border-radius: 50px;
+            border: none;
+        }
+    }
+}
