@@ -1,4 +1,4 @@
-.filter{
+.filter {
     display: grid;
     row-gap: 16px;
     font-size: 16px;
@@ -17,5 +17,34 @@
         color: var(--clr-dark-blue);
         font-size: 14px;
         line-height: 1.5;
+    }
+    label{
+        padding-inline-start: 10px;
+    }
+
+    button {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: max-content;
+        column-gap: 5px;
+        align-items: center;
+        border: none;
+        background-color: transparent;
+        font-size: 12px;
+        line-height: 1.5;
+        font-weight: 500;
+
+        .triangle, .reverseTriangle {
+            align-self: center;
+                height: 0;
+                width: 0;
+                border-style: solid;
+                border-width: 7px 4.5px 0 4.5px;
+                border-color: black transparent transparent transparent;
+            
+        }
+        .reverseTriangle{
+            transform: rotate(180deg);
+        }
     }
 }

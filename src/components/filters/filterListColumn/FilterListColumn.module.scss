@@ -20,5 +20,23 @@
         color: var(--clr-dark-blue);
         font-size: 14px;
         line-height: 1.5;
+
+
+        .item {
+            label {
+                padding: 5px;
+            }
+
+
+            input:checked + label {
+                background-color: orange;
+                color: white;
+                border-radius: 10px;
+            }
+
+            input {
+                display: none;
+            }
+        }
     }
 }

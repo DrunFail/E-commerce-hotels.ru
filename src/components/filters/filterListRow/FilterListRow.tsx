@@ -1,3 +1,5 @@
+import React from 'react';
+import { inputChangeSync } from '../synсInput';
 import styles from './FilterListRow.module.scss';
 
 
@@ -26,13 +28,14 @@ const renderString = (elem: string, index: number) => {
 
 
 
-export default function FilterListRow({dataList }: FilterListRowProps) {
+export default function FilterListRow({ dataList }: FilterListRowProps) {
+    
     return (
         <div className={styles.filter}>
             {dataList.map((elem, index) =>
                 <div key={index} className={styles.item }>
-                    <input type="radio" id={index.toString()} name='q'/>
-                    <label htmlFor={index.toString()}>
+                    <input onChange={(e) => inputChangeSync(e, index, 'types')} type="radio" id={'type' +index} name='q'/>
+                    <label htmlFor={'type' + index}>
                             {renderString(elem, index)}
                     </label>
                 </div>

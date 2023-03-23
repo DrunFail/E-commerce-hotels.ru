@@ -18,9 +18,9 @@ export default function PriceFilter() {
         <div className={styles.filter}>
             <p>Цена</p>
             <div className={styles.inputs }>
-                <input value={price.from} onChange={handlePriceFrom} />
+                <input value={price.from} onChange={handlePriceFrom} placeholder='0'/>
                 <span>-</span>
-                <input value={price.to} onChange={handlePriceTo} />
+                <input value={price.to} onChange={handlePriceTo} placeholder='10000' />
             </div>
         </div>
     );

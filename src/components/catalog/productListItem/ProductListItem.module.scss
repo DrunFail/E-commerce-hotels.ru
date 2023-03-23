@@ -10,40 +10,39 @@
     padding-block: 29px;
     border-radius: 10px;
     background-color: var(--clr-white);
-    
+    filter:drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
 
     .image {
-        display:grid;
+        display: grid;
         inline-size: 100%;
         grid-template-rows: max-content 194px 1fr;
-        
 
-        & > p:first-child{
+
+        & > p:first-child {
             inline-size: 96px;
             text-align: center;
-            color:var(--clr-white);
+            color: var(--clr-white);
             letter-spacing: 0.045em;
             text-transform: uppercase;
-           
             font-size: 10px;
             font-weight: 600;
-            
             padding: 8px 12px;
             border-radius: 5px;
             background-color: green;
         }
 
 
-        & > div{
+        & > div {
             display: flex;
             justify-self: flex-start;
 
-            p{
-            svg{
-                block-size: 16px;
-                inline-size: 16px;
-                
-            }}
+            p {
+                svg {
+                    block-size: 16px;
+                    inline-size: 16px;
+                }
+            }
         }
 
         img {
