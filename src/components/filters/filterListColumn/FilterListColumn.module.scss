@@ -1,0 +1,42 @@
+.filter {
+    display: grid;
+    row-gap: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    padding-block: 20px;
+    border-block-end: 1px dashed var(--clr-dark-blue);
+
+    & > p {
+        font-size: 16px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        color: var(--clr-black);
+    }
+
+
+    .list {
+        display: grid;
+        row-gap: 10px;
+        color: var(--clr-dark-blue);
+        font-size: 14px;
+        line-height: 1.5;
+
+
+        .item {
+            label {
+                padding: 5px;
+            }
+
+
+            input:checked + label {
+                background-color: orange;
+                color: white;
+                border-radius: 10px;
+            }
+
+            input {
+                display: none;
+            }
+        }
+    }
+}

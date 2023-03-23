@@ -7,7 +7,7 @@
     @each $color, $value in $colors {
         --clr-#{$color}: #{$value};
     }
-    --max-width: 1400px;
+    --max-width: 1370px;
 }
 
 body{

@@ -1,0 +1,14 @@
+.list{
+    display: grid;
+    h4{
+        margin-block-end: 10px;
+        font-size:16px;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    .resetFilter{
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,11 @@
+.section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    row-gap: 10px;
+    padding-inline: 15px;
+    
+    margin-inline: auto;
+    column-gap: 21px;
+    
+    
+}
