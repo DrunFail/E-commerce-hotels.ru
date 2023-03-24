@@ -1,5 +1,5 @@
 .logo {
-    inline-size: clamp(5rem, 10vw, 9.75rem);
+    inline-size: clamp(6.06rem, 10vw, 9.75rem);
 
     a {
         display: inline-block;
@@ -7,6 +7,7 @@
         svg {
             max-inline-size: 100%;
             height: 66px;
+            fill: var(--clr-dark-blue);
         }
     }
 }

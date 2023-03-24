@@ -1,0 +1,18 @@
+.container {
+    position: relative;
+    inline-size: 282px;
+
+    .input {
+        inline-size: 100%;
+        block-size: 59px;
+        padding: 13px 10px 13px 20px;
+        border-radius: 80px;
+        border: none;
+    }
+
+    button {
+        position: absolute;
+        top: calc(50% - 39px / 2);
+        right: 10px;
+    }
+}

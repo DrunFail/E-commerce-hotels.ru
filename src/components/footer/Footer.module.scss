@@ -1,11 +1,167 @@
-.footer{
-    background-color: var(--clr-dark-blue);
+.footer {
+    --footer-bg-color: var(--clr-dark-blue);
+    --footer-heading-fs: 20px;
+    --footer-heading-fw: 600;
+    --footer-heading-row-gap: 25px;
+    --footer-subscribe-fs: 12px;
+    --footer-subscribe-row-gap: 14px;
+    --footer-logo-desc-fs: clamp(12px,2vw,16px);
+    --footer-font-color: var(--clr-white);
+    --footer-logo-content-column-gap: clamp(20px,4.38vw,59px);
+    --footer-main-column-gap: clamp(20px, 7vw,95px);
+    --footer-link-row-gap: 20px;
+    --footer-menu-fs: 14px;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-font-color);
+    line-height: 1.5;
 
-    .container{
+    h3 {
+        font-size: var(--footer-heading-fs);
+        font-weight: var(--footer-heading-fw);
+    }
+
+    .container {
         max-inline-size: var(--max-width);
         margin-inline: auto;
-        padding-block-start: 71px;
+        padding-block: 71px 116px;
         display: grid;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: 1fr 3fr;
+        column-gap: var(--footer-logo-content-column-gap);
+
+        .logoContainer {
+            display: grid;
+            row-gap: 45px;
+
+
+            .logo {
+                & div {
+                    justify-self: flex-start;
+                }
+
+                & a {
+                    justify-self: flex-end;
+                }
+
+                svg {
+                    fill: var(--clr-white);
+                }
+
+                & > p {
+                    max-inline-size: 320px;
+                    padding-block-start: 15px;
+                    font-size: var(--footer-logo-desc-fs);
+                }
+            }
+
+            .subscribe {
+                display: grid;
+                row-gap: var(--footer-subscribe-row-gap);
+
+                p {
+                    font-size: var(--footer-subscribe-fs);
+                }
+            }
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(3, max-content);
+            column-gap: var(--footer-main-column-gap);
+
+            nav {
+                display: grid;
+                grid-template-columns: repeat(2, max-content);
+                column-gap: var(--footer-main-column-gap);
+
+                div {
+                    display: grid;
+                    row-gap: var(--footer-heading-row-gap);
+                    grid-template-rows: max-content 1fr;
+
+                    ul {
+                        display: grid;
+                        grid-template-columns: max-content;
+                        grid-auto-rows: max-content;
+                        row-gap: var(--footer-link-row-gap);
+
+                        li {
+                            font-size: var(--footer-menu-fs);
+                        }
+                    }
+                }
+            }
+
+
+            .priceList {
+                display: grid;
+                grid-auto-rows: max-content;
+                row-gap: var(--footer-heading-row-gap);
+
+                .messengers {
+                    p {
+                        color: var(--clr-white);
+                        font-size: 14px;
+                        margin-block-end: 10px;
+                    }
+
+                    ul {
+                        display: flex;
+                        column-gap: 10px;
+                    }
+                }
+
+                .contacts {
+                    display: grid;
+                    row-gap: var(--footer-heading-row-gap);
+                    grid-auto-rows: max-content;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 50em) {
+    .footer .container {
+        grid-auto-rows: max-content;
+        grid-template-columns:1fr;
+        row-gap: 30px;
+        padding-inline: 15px;
+        padding-block-start: 15px;
+
+        .logoContainer {
+
+
+            .logo {
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                & p{
+                    grid-column: 1/-1;
+                }
+            }
+
+           
+        }
+
+        .content {
+            grid-template-areas: 'nav nav' 'contacts messenger';
+            grid-template-columns: repeat(2, minmax(max-content, 1fr));
+            row-gap: var(--footer-heading-row-gap);
+
+            nav {
+                grid-area: nav;
+                grid-template-columns: minmax(max-content,1fr) minmax(max-content,1fr);
+            }
+
+            .contacts {
+                display: grid;
+                grid-area: contacts;
+                row-gap: var(--footer-heading-row-gap);
+            }
+
+            .priceList {
+                grid-area: messenger;
+            }
+        }
     }
 }

@@ -1,22 +1,16 @@
 import styles from './CallbackBlock.module.scss';
+import CallbackImg from '../../assets/img/callback.png';
 
 
-interface CallbackData {
-    phone: string,
-    opening: string,
-    linkText: string,
-    linkUrl: string
-    
-}
-
-interface CallbackBlockProps {
-    callbackData: CallbackData,
-    image: string,
-    altImage: string
+const callbackData = {
+    phone: '+7 (777) 490-00-91',
+    opening: 'время работы: 9:00-20:00',
+    linkText: 'Заказать звонок',
+    linkUrl: '#'
 }
 
 
-export default function CallbackBlock({callbackData,image,altImage }: CallbackBlockProps) {
+export default function CallbackBlock() {
     return (
         <div className={styles.callback }>
             <div className={styles['callback-content']}>
@@ -25,7 +19,7 @@ export default function CallbackBlock({callbackData,image,altImage }: CallbackBl
                 <a href={callbackData.linkUrl }>{callbackData.linkText}</a>
             </div>
 
-            <img src={image} alt={altImage } />
+            <img src={CallbackImg} alt='operator' />
         </div>
     
     );

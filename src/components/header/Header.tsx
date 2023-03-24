@@ -35,12 +35,7 @@ const nav_menu = [
     }
 ]
 
-const callback_data = {
-    phone: '+7 (777) 490-00-91',
-    opening: 'время работы: 9:00-20:00',
-    linkText: 'Заказать звонок',
-    linkUrl: '#'
-}
+
 
 export default function Header() {
     const size = useResize();
@@ -58,9 +53,7 @@ export default function Header() {
                                 <SpriteIcon id={'location'} />
                             </HeaderCurrentShop>
 
-                            <HeaderEmailFeedback email={'opt.sultan@mail.ru '} description={'На связи в любое время'} >
-                                <SpriteIcon  id={'mail'} />
-                            </HeaderEmailFeedback>
+                        <HeaderEmailFeedback imgStatus={true} />
 
 
 
@@ -113,15 +106,10 @@ export default function Header() {
                             </SearchForm>
 
 
-                            <CallbackBlock
-                                callbackData={callback_data}
-                                image={Callback}
-                                altImage={'support service'} />
+                            <CallbackBlock />
 
 
-                            <ButtonDownload link={'#'} text={'Прайс-лист'}>
-                                <SpriteIcon id={'download'} />
-                            </ButtonDownload>
+                            <ButtonDownload />
 
 
 
