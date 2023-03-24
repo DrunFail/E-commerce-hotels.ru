@@ -55,11 +55,11 @@ export default function Header() {
                         <>
 
                             <HeaderCurrentShop address={'г. Кокчетав, ул. Ж. Ташенова 129Б'} description={'(Рынок Восточный)'}>
-                                <SpriteIcon sprite={Sprite} id={'location'} />
+                                <SpriteIcon id={'location'} />
                             </HeaderCurrentShop>
 
                             <HeaderEmailFeedback email={'opt.sultan@mail.ru '} description={'На связи в любое время'} >
-                                <SpriteIcon sprite={Sprite} id={'mail'} />
+                                <SpriteIcon  id={'mail'} />
                             </HeaderEmailFeedback>
 
 
@@ -70,15 +70,13 @@ export default function Header() {
                     {size <= 800 &&
                         <>
                             <ButtonBurger>
-                                <SpriteIcon sprite={Sprite} id='burger' />
+                                <SpriteIcon  id='burger' />
                             </ButtonBurger>
 
-                            <Logo href='/'>
-                                <SpriteIcon sprite={Sprite} id={'logo'} />
-                            </Logo>
+                            <Logo href='/' />
 
                             <HeaderCartBlock text={'Корзина'} linkUrl={'cart'} totalPrice={'12 478 ₸'}>
-                                <SpriteIcon sprite={Sprite} id={'cart'} />
+                                <SpriteIcon id={'cart'} />
                             </HeaderCartBlock>
                         </>
                     }
@@ -89,13 +87,11 @@ export default function Header() {
                 <div className='header-bottom'>
                     {size > 800 &&
 
-                        <Logo href='/'>
-                            <SpriteIcon sprite={Sprite} id={'logo'} />
-                        </Logo>
+                        <Logo href='/'  />
                     }
 
                     <ButtonCatalog text='Каталог'>
-                        <SpriteIcon sprite={Sprite} id={'catalog'} />
+                        <SpriteIcon  id={'catalog'} />
                     </ButtonCatalog>
 
 
@@ -103,7 +99,7 @@ export default function Header() {
                     {size < 800 &&
 
                         <MobileButtonSearch text='Поиск'>
-                            <SpriteIcon sprite={Sprite} id={'search'} />
+                            <SpriteIcon  id={'search'} />
                         </MobileButtonSearch>
                     }
 
@@ -112,7 +108,7 @@ export default function Header() {
 
                             <SearchForm>
                                 <ButtonSearch >
-                                    <SpriteIcon sprite={Sprite} id='search' />
+                                    <SpriteIcon  id='search' />
                                 </ButtonSearch>
                             </SearchForm>
 
@@ -124,13 +120,13 @@ export default function Header() {
 
 
                             <ButtonDownload link={'#'} text={'Прайс-лист'}>
-                                <SpriteIcon sprite={Sprite} id={'download'} />
+                                <SpriteIcon id={'download'} />
                             </ButtonDownload>
 
 
 
                             <HeaderCartBlock text={'Корзина'} linkUrl={'cart'} totalPrice={'12 478 ₸'}>
-                                <SpriteIcon sprite={Sprite} id={'cart'} />
+                                <SpriteIcon  id={'cart'} />
                             </HeaderCartBlock>
                         </>}
 

@@ -1,6 +1,5 @@
 import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import ButtonSearch from "../../buttons/buttonSearch/ButtonSearch";
-import Sprite from "../../../assets/img/sprite.svg";
 import './SearchInput.scss';
 
 export default function SearchInput() {
@@ -9,7 +8,7 @@ export default function SearchInput() {
             <input type='text' placeholder='Поиск...'/>
             <div className='button-container'>
                 <ButtonSearch>
-                    <SpriteIcon sprite={Sprite} id='search' />
+                    <SpriteIcon id='search' />
                 </ButtonSearch>
             </div>
         </div>

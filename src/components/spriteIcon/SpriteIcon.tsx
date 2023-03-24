@@ -1,13 +1,15 @@
+import Sprite from '../../assets/img/sprite.svg';
+
+
 interface SpriteIconProps {
-    sprite: string,
     id: string
 }
 
 
-export default function SpriteIcon({ sprite, id }:SpriteIconProps) {
+export default function SpriteIcon({ id }:SpriteIconProps) {
     return (
         <svg>
-            <use href={`${sprite}#${id}`} />
+            <use href={`${Sprite}#${id}`} />
         </svg>
     );
 }
