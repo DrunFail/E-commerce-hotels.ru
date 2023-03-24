@@ -1,16 +1,15 @@
 import ProductList from "../components/catalog/productList/ProductList";
 import FilterListRow from "../components/filters/filterListRow/FilterListRow";
-import Header from "../components/header/Header";
 import { filterOptions } from '../components/filters/constants';
 import FilterRenderedList from "../components/filters/filterRenderedList/FilterRenderedList";
-import styles from './Homepage.module.scss';
+import styles from './CatalogPage.module.scss';
 import Sort from "../components/filters/sort/Sort";
 
 
-export default function Homepage() {
+export default function CatalogPage() {
     
     return (<>
-        <Header />
+        
         <div className={styles.page}>
             <div className={styles.sort}>
             <h2>Косметика и гигиена</h2>
