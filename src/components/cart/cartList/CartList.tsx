@@ -1,27 +1,20 @@
 import data from '../../../fakeData/data.json';
+import CartListItem from '../cartListItem/CartListItem';
+import styles from './CartList.module.scss';
 
 
 
 export default function CartList() {
     return (
-        <section>
+        <section className={styles.section }>
             <h2>Корзина</h2>
-            {data.map(elem => 
-                <article>
-                    <div>
-                        <img src={elem.url} alt={elem.title } />
-                    </div>
-                    <div>
-                        <p>{elem.title}</p>
-                        <p>{elem.description}</p>
-                    </div>
-                    <div>
-                    counter
-                    </div>
-                    <div>price</div>
-                    <div>remove</div>
-                </article>
+            {data.map(elem =>
+                <CartListItem key={elem.code} elem={elem} />
             )}
+            <div className={styles.total }>
+                <a href='order'>Офомить заказ</a>
+<p>total</p>
+            </div>
         </section>
     
     );
