@@ -2,7 +2,6 @@ import ButtonRemove from "../../../UI/buttons/buttonRemove/ButtonRemove";
 import { ProductItem } from "../../catalog/interfaces/interfaces";
 import SpriteIcon from "../../spriteIcon/SpriteIcon";
 import styles from './CartListItem.module.scss';
-import Sprite from '../../../assets/img/sprite.svg';
 
 interface CartListItemProps {
     elem: ProductItem
@@ -18,8 +17,8 @@ export default function CartListItem({ elem }: CartListItemProps) {
             <div className={styles.text }>
                 <div className={styles.volume }>
                     {elem.volume.toLowerCase() == 'объем'
-                        ? <SpriteIcon sprite={Sprite} id='bottle' />
-                        : <SpriteIcon sprite={Sprite} id='box' />}
+                        ? <SpriteIcon id='bottle' />
+                        : <SpriteIcon id='box' />}
                     <p>{elem.size}</p>
                 </div>
                 <p className={styles.mainTitle }>{elem.brand} {elem.title}</p>

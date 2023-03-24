@@ -3,3 +3,8 @@
 .feedback{
     @include header-info-block;
 }
+
+.feed-no-image {
+   @extend .feedback;
+    grid-template-areas: 'desc-text' 'main-text';
+}

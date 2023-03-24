@@ -1,18 +1,14 @@
-import { ReactNode } from "react";
+import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import styles from './ButtonDownload.module.scss';
 
+const link = '#'
 
-interface ButtonDownloadProps {
-    link: string,
-    text: string,
-    children: ReactNode
-}
 
-export default function ButtonDownload({ link,text,children }: ButtonDownloadProps) {
+export default function ButtonDownload() {
     return (
         <a href={link} className={styles.download}>
-            {text}
-            {children}
+            Прайс-лист
+            <SpriteIcon id='download' />
         </a>
     );
 }

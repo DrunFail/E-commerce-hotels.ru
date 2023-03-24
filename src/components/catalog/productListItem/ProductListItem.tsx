@@ -2,7 +2,6 @@ import ButtonInCart from "../../../UI/buttons/buttonInCart/ButtonInCart";
 import SpriteIcon from "../../spriteIcon/SpriteIcon";
 import { ProductItem } from "../interfaces/interfaces";
 import styles from './ProductListItem.module.scss';
-import Sprite from '../../../assets/img/sprite.svg';
 
 interface ProductListItemProps {
     item: ProductItem
@@ -19,8 +18,8 @@ export default function ProductListItem({ item }: ProductListItemProps) {
                 <img src={item.url} alt={item.title} />
                 <div>
                     <p>{item.volume.toLowerCase() == 'объем'
-                        ? <SpriteIcon sprite={Sprite} id='bottle' />
-                        : <SpriteIcon sprite={Sprite} id='box' />}
+                        ? <SpriteIcon id='bottle' />
+                        : <SpriteIcon id='box' />}
                     </p>
                     <p>{item.size}</p>
                 </div>
@@ -37,7 +36,7 @@ export default function ProductListItem({ item }: ProductListItemProps) {
             <div className={styles.price}>
                 <p>{item.price} T</p>
                 <ButtonInCart text='В корзину'>
-                    <SpriteIcon sprite={Sprite} id='cart-white' />
+                    <SpriteIcon  id='cart-white' />
                 </ButtonInCart>
             </div>
 
