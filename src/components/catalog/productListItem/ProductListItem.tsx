@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ButtonInCart from "../../../UI/buttons/buttonInCart/ButtonInCart";
 import SpriteIcon from "../../spriteIcon/SpriteIcon";
 import { ProductItem } from "../interfaces/interfaces";
@@ -26,7 +27,7 @@ export default function ProductListItem({ item }: ProductListItemProps) {
                
             </div>
 
-            <a href={'/'}><span>{item.brand}</span> {item.title}</a>
+            <Link to={`${item.code}`}><span>{item.brand}</span> {item.title}</Link>
             <div className={styles.details}>
                 <p>Штрихкод: <span>{item.code}</span></p>
                 <p>Производитель: <span>{item.manufacturer}</span></p>
@@ -35,9 +36,7 @@ export default function ProductListItem({ item }: ProductListItemProps) {
             </div>
             <div className={styles.price}>
                 <p>{item.price} T</p>
-                <ButtonInCart text='В корзину'>
-                    <SpriteIcon  id='cart-white' />
-                </ButtonInCart>
+                <ButtonInCart />
             </div>
 
         </article>

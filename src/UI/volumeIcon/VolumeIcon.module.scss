@@ -1,0 +1,11 @@
+.icon {
+    display: flex;
+    justify-self: flex-start;
+
+    p {
+        svg {
+            block-size: 16px;
+            inline-size: 16px;
+        }
+    }
+}

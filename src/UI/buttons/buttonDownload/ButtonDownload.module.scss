@@ -12,5 +12,22 @@
     & svg {
         inline-size: 17px;
         aspect-ratio: 1/1;
+        fill: var(--clr-white);
+    }
+}
+
+.download-white {
+    @include primary-button;
+    background-color: var(--clr-white);
+    border-radius: 10px;
+    color: var(--clr-dark-blue);
+    inline-size: 186px;
+    block-size: 100%;
+    box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+
+    & svg {
+        inline-size: 17px;
+        aspect-ratio: 1/1;
+        fill: black;
     }
 }

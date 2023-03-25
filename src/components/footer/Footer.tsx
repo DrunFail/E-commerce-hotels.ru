@@ -19,7 +19,7 @@ export default function Footer() {
                     <div className={styles.logo}>
 
                         <Logo href="/" />
-                        {size < 800 && <ButtonDownload />}
+                        {size < 800 && <ButtonDownload color='orange'/>}
                         <p>Компания «Султан» — снабжаем розничные магазины товарами
                             "под ключ" в Кокчетаве и Акмолинской области</p>
 
@@ -62,7 +62,7 @@ export default function Footer() {
                         {size < 800 ||
                             <>
                                 <h3>Скачать прайс-лист:</h3>
-                                <ButtonDownload />
+                                <ButtonDownload color='orange'/>
                             </>}
 
                         <div className={styles.messengers}>

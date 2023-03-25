@@ -1,18 +1,15 @@
 import { ReactNode } from 'react';
+import SpriteIcon from '../../../components/spriteIcon/SpriteIcon';
 import styles from './ButtonInCart.module.scss';
 
 
-interface ButtonInCartProps {
-    text: string,
-    children: ReactNode
-}
 
 
-export default function ButtonInCart({ text, children }: ButtonInCartProps) {
+export default function ButtonInCart() {
     return (
         <button className={styles.button}>
-            {text}
-            {children}
+            В корзину
+            <SpriteIcon id='cart-white' />
         </button>
     );
     
