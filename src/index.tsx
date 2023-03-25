@@ -5,6 +5,7 @@ import './styles/index.scss';
 import CatalogPage from './pages/CatalogPage';
 import CartList from './components/cart/cartList/CartList';
 import Layout from './components/layout/Layout';
+import ProductDetail from './components/catalog/productDetail/ProductDetail';
 
 const router = createBrowserRouter([
     {
@@ -17,8 +18,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "catalog",
-                element: <CatalogPage />
+                element: <CatalogPage />,
+            },
+
+            {
+                path: "catalog/:catalogId",
+                element: <ProductDetail />
             }
+
+
         ]
     },
 ]);
