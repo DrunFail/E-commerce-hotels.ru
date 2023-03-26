@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useAppDispatch } from "../../../redux/hooks";
 import InputField from "../../../UI/inputs/inputField/InputField";
 import { ProductItem } from "../../catalog/interfaces/interfaces";
+import { addNewProduct } from "../../catalog/redux/productSlice";
 
 
 const initialProduct = {
@@ -22,15 +24,15 @@ const initialProduct = {
 export default function AddNewProduct() {
     const [newProduct, setNewProduct] = useState<ProductItem>(initialProduct);
 
-    //const handleAddProduct = (product: ProductItem) => {
-    //    setState(state => [...state, product]);
-    //    localStorage.setItem(local, JSON.stringify(state));
-    //}
+    const dispatch = useAppDispatch();
+
+    
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        /*handleAddProduct(newProduct);*/
+        dispatch(addNewProduct(newProduct));
+        setNewProduct(initialProduct);
     }
 
 
