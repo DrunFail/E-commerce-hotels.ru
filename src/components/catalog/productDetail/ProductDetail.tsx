@@ -29,7 +29,7 @@ export default function ProductDetail() {
                     <p>{product.price} T</p>
                     <ButtonCounter />
 
-                    <ButtonInCart />
+                    <ButtonInCart code={product.code} />
                     {size < 800 && <ButtonShare /> }
                     
 

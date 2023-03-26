@@ -10,7 +10,10 @@ interface ProductListItemProps {
 
 
 export default function ProductListItem({ item }: ProductListItemProps) {
-    
+   
+   
+
+
 
     return (
         <article className={styles.article}>
@@ -36,7 +39,7 @@ export default function ProductListItem({ item }: ProductListItemProps) {
             </div>
             <div className={styles.price}>
                 <p>{item.price} T</p>
-                <ButtonInCart />
+                <ButtonInCart code={item.code } />
             </div>
 
         </article>
