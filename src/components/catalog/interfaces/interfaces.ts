@@ -8,5 +8,5 @@ export interface ProductItem {
     brand: string,
     description: string,
     price: number,
-    typeCare: string
+    typeCare: string[]
 }
