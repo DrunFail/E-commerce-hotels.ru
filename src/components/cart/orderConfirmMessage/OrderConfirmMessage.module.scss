@@ -1,0 +1,32 @@
+.success{
+    position: absolute;
+    inline-size: 735px;
+    block-size: 424px;
+    background-color: var(--clr-white);
+    z-index: 1;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: 85px 83px 68px 1fr;
+    align-items: flex-start;
+    justify-items: center;
+    border-radius: 8px;
+
+   }
+
+    h4{
+        font-size: 40px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: var(--clr-black);
+    }
+
+    p{
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 300;
+        color: var(--clr-dark-blue);
+    }
+
+a {
+    justify-self: flex-end;
+}

@@ -55,6 +55,10 @@ export const cartSlice = createSlice({
 
             }
         },
+        clearCart() {
+            localStorage.removeItem('cart');
+            initialState();
+        }
 
     },
 
@@ -64,6 +68,7 @@ export const { addCartItem,
     deleteCartItem,
     incrementCartItem,
     decrementCartItem,
+    clearCart
 } = cartSlice.actions
 
 export const selectCart = (state: RootState) => state.cart
