@@ -1,36 +1,40 @@
+@import '../../../styles/mixins';
+
 .admin-panel {
-    section {
-        form{
-            display: grid;
-            max-inline-size: 600px;
-            margin-inline: auto;
-            row-gap: 15px;
-            
-            margin-block: 15px 30px;
+    margin-block-start: 40px;
+    & > a{
+        @include primary-button;
+        font-size: 20px;
+        font-weight: 500;
+        border-radius: 80px;
+    }
 
-            div{
-                display: grid;
-                grid-template-columns: 1fr 3fr;
+    table {
+        margin-block:40px 20px;
 
-            }
-            input, select{
-                block-size: 40px;
-            }
-            textarea{
-                resize: none;
-                block-size: 100px;
-            }
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px 6px;
+            color: var(--clr-dark-blue);
         }
-        article {
-            display: grid;
-            grid-template-columns: 1fr 2fr 6fr repeat(3, 1fr) max-content;
-            margin-block-end: 10px;
 
-            img{
-                max-inline-size: 100%;
-                block-size: auto;
-                aspect-ratio: 4/3;
-                object-fit: contain;
+
+        img {
+            max-inline-size: 100%;
+            block-size: auto;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+        }
+
+        thead {
+            th {
+                font-size: 24px;
+                line-height: 1.5;
+            }
+
+            td {
+                text-align: center;
             }
         }
     }

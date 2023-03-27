@@ -10,7 +10,7 @@ interface ButtonRemoveProps {
 
 export default function ButtonRemove({onClick }: ButtonRemoveProps) {
     return (
-        <button onClick={onClick} className={styles.button}>
+        <button type='button' onClick={onClick} className={styles.button}>
             <SpriteIcon id={"remove"} />
         </button>
     );

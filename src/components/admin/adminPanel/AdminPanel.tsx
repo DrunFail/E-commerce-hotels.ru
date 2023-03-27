@@ -1,42 +1,57 @@
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+import ButtonRemove from '../../../UI/buttons/buttonRemove/ButtonRemove';
 import { deleteProduct, selectProduct } from '../../catalog/redux/productSlice';
 import './AdminPanel.scss';
-
-
-
-
-
-
 
 export default function AdminPanel() {
     const productList = useAppSelector(selectProduct);
     const dispatch = useAppDispatch();
 
     const handleDeleteProduct = (id: number) => {
-dispatch(deleteProduct(id))
+        dispatch(deleteProduct(id))
     }
-  
-
-
-
 
 
     return (
         <div className='admin-panel'>
-            <section>
-                <Link to='add-new-product' target='_blank'>Добавить продукт</Link>
-                {productList.map(product =>
-                    <article key={product.code}>
-                        <img src={product.url} alt={product.title} />
-                        <p>{product.title}</p>
-                        <p>{product.description}</p>
-                        <p>{product.manufacturer}</p>
-                        <p>{product.brand}</p>
-                        <p>{product.price}</p>
-                        <button onClick={() => handleDeleteProduct(product.code) }>delete</button>
+            <Link to='add-new-product' target='_blank'>Добавить продукт</Link>
+            <table>
+                <thead>
+                    <tr>
+                        <th colSpan={7}>Список товаров</th>
+                    </tr>
+                    <tr>
+                        <td>Изображение</td>
+                        <td>Название</td>
+                        <td>Описание</td>
+                        <td>Производитель</td>
+                        <td>Брэнд</td>
+                        <td>Цена</td>
+                        <td>Действия</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {productList.map(product =>
+                        <tr key={product.code}>
+                            <td> <img src={product.url} alt={product.title} /></td>
+                            <td>{product.title}</td>
+                            <td>{product.description}</td>
+                            <td>{product.manufacturer}</td>
+                            <td>{product.brand}</td>
+                            <td>{product.price}</td>
+                            <td><ButtonRemove onClick={() => handleDeleteProduct(product.code)} /></td>
+                        </tr>)}
 
-                    </article>)}
+                </tbody>
+            </table>
+            <section>
+
+
+
+
+
+
             </section>
 
 
