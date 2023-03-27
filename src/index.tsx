@@ -8,6 +8,8 @@ import Layout from './components/layout/Layout';
 import ProductDetail from './components/catalog/productDetail/ProductDetail';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
+import AdminPanel from './components/admin/adminPanel/AdminPanel';
+import AddNewProduct from './components/admin/addNewProduct/AddNewProduct';
 
 const router = createBrowserRouter([
     {
@@ -26,7 +28,17 @@ const router = createBrowserRouter([
             {
                 path: "catalog/:catalogId",
                 element: <ProductDetail />
-            }
+            },
+            {
+                path: "admin",
+                element: <AdminPanel />
+            },
+               
+                    {
+                        path: 'admin/add-new-product',
+                    element: <AddNewProduct />}
+                
+            
 
 
         ]

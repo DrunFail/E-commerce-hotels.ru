@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from '../../../redux/store/store'
-import { ShoppingCartItem } from '../interface/interfaces'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../../../redux/store/store';
+import { ShoppingCartItem } from '../interface/interfaces';
 
 
 const initialState = (): ShoppingCartItem[] => {
