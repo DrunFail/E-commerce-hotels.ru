@@ -10,8 +10,8 @@ import styles from './ProductDetail.module.scss';
 
 
 export default function ProductDetail() {
-    const { catalogId } = useParams();
-    const product = data.filter(elem => elem.code.toString() === catalogId)[0];
+    const { categoryId } = useParams();
+    const product = data.filter(elem => elem.code.toString() === categoryId)[0];
 
     const size = useResize();
 
