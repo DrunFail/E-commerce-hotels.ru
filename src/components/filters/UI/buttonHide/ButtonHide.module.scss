@@ -1,0 +1,16 @@
+.button {
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--clr-dark-blue);
+
+    svg {
+        inline-size: 7px;
+        block-size: 7px;
+        transform: rotate(180deg);
+    }
+}

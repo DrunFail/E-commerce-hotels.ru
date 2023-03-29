@@ -1,9 +1,18 @@
+import { MouseEventHandler } from "react";
 import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import styles from './ButtonArrowRight.module.scss';
 
-export default function ButtonArrowRight() {
+
+interface ButtonArrowRightProps {
+    handleClick?: MouseEventHandler<HTMLButtonElement>,
+    showFilter?: boolean
+}
+
+export default function ButtonArrowRight({handleClick, showFilter }:ButtonArrowRightProps) {
     return (
-        <button className={styles.button } ><SpriteIcon id='arrow-right'/></button>
+        <button onClick={ handleClick} className={styles[showFilter ? 'button-open' : 'button']} >
+            <SpriteIcon id='arrow-right' />
+        </button>
     
     );
 }

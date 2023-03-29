@@ -1,21 +1,22 @@
 import SpriteIcon from "../../components/spriteIcon/SpriteIcon";
 import styles from './VolumeIcon.module.scss';
 
-interface VolumeIconProps {
 
+interface VolumeIconProps {
     volume: string,
-    size: number
+    size: number,
+    sizeUnit: string
 }
 
 
-export default function VolumeIcon({volume, size }:VolumeIconProps) {
+export default function VolumeIcon({volume, size,sizeUnit }:VolumeIconProps) {
     return (
-        <div className={styles.icon }>
-            <p>{volume.toLowerCase() == 'объем'
+        <div className={styles.icon}>
+            {volume.toLowerCase() == 'объем'
                 ? <SpriteIcon id='bottle' />
                 : <SpriteIcon id='box' />}
-            </p>
-            <p>{size}</p>
+            
+            <p>{size} {sizeUnit}</p>
         </div>
     );
 }
