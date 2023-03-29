@@ -18,7 +18,8 @@
 @media only screen and (max-width: 50em) {
 
     .catalog {
-    @include mobile-header-button;
-    border-inline-end: 1px dotted var(--clr-dark-blue);
+        @include mobile-header-button;
+        border-inline-end: 1px dashed rgba(63, 78, 101, 0.1);
+        
     }
 }

@@ -1,0 +1,106 @@
+@import '../../../../styles/mixins';
+
+.article {
+    block-size: 520px;
+    max-inline-size: 350px;
+    display: grid;
+    grid-template-rows: max-content 50px repeat(2, max-content);
+    justify-items: center;
+    font-size: 14px;
+    padding-inline: 15px;
+    padding-block: 15px;
+    border-radius: 10px;
+    background-color: var(--clr-white);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    row-gap: 10px;
+
+
+    .image {
+        display: grid;
+        inline-size: 100%;
+        grid-template-rows: max-content 194px 1fr;
+
+
+        & > p:first-child {
+            inline-size: 96px;
+            text-align: center;
+            color: var(--clr-white);
+            letter-spacing: 0.045em;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 6.5px 10.5px;
+            border-radius: 5px;
+            background-color: var(--clr-green-sec);
+        }
+
+
+
+
+        img {
+            max-block-size: 100%;
+            inline-size: auto;
+            aspect-ratio: 320/409;
+            object-fit: contain;
+            justify-self: center;
+        }
+    }
+
+
+    & > a {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: var(--lh-secondary);
+        color: var(--clr-black);
+        justify-self: flex-start;
+
+        span {
+            font-weight: 800;
+        }
+    }
+
+    .details {
+        padding-block: 10px 5px;
+        justify-self: flex-start;
+        display: grid;
+        row-gap: 5px;
+
+        & > p {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--clr-dark-blue);
+
+            span {
+                font-weight: 500;
+                color: var(--clr-black);
+            }
+        }
+
+        .typeCare {
+            display: flex;
+            column-gap: 5px;
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--clr-dark-blue);
+
+            .items {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, max-content);
+                font-weight: 500;
+                color: var(--clr-black);
+            }
+        }
+    }
+
+    .price {
+        display: flex;
+        inline-size: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        & > p {
+            font-size: 16px;
+            font-weight: 800;
+        }
+    }
+}

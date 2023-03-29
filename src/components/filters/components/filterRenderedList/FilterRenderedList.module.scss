@@ -1,0 +1,37 @@
+.list {
+    display: grid;
+
+    h4 {
+        margin-block-end: 10px;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    .resetFilter {
+        display: flex;
+        column-gap: 10px;
+    }
+
+    .title {
+        display: flex;
+        column-gap: 43px;
+    }
+}
+
+@media only screen and (max-width: 50em) {
+    .list {
+
+        
+
+        .resetFilter {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            column-gap: 15px;
+
+            & button:first-child {
+                inline-size: clamp(216px,67.5vw,290px)
+            }
+        }
+    }
+}

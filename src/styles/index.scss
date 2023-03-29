@@ -2,19 +2,23 @@
 @import '_colors';
 @import '_typography';
 
-:root{
-   
+:root {
+
     @each $color, $value in $colors {
         --clr-#{$color}: #{$value};
     }
+
     --max-width: 1370px;
 }
 
-body{
-    
-    main{
-        max-inline-size: var(--max-width);
-        margin-inline: auto;
+main {
+    max-inline-size: var(--max-width);
+    margin-inline: auto;
+}
+
+
+@media only screen and (max-width: 1370px) {
+    main {
+        padding-inline: 15px;
     }
 }
- 

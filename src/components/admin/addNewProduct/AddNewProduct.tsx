@@ -15,6 +15,7 @@ const initialProduct = {
     title: "",
     volume: "",
     size: 0,
+    sizeUnit: "",
     code: 0,
     manufacturer: "",
     brand: "",

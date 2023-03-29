@@ -1,7 +1,8 @@
 header {
 
-    .header-container:first-child {
-        border-block-end: 1px solid var(--clr-dark-blue);
+    .header-container {
+        border-block-end: 1px solid rgba(63, 78, 101, 0.1);
+        
     }
 
     .header-top, .header-bottom {
@@ -15,7 +16,6 @@ header {
         column-gap: clamp(1rem, 2.5vw, 2.5rem);
         padding-block: 14px;
         align-items: center;
-
     }
 
     .header-bottom {

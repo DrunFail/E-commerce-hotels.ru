@@ -2,16 +2,26 @@ import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import ButtonSearch from "../../buttons/buttonSearch/ButtonSearch";
 import './SearchInput.scss';
 
-export default function SearchInput() {
+
+interface SearchInputProps {
+    searchRef: React.RefObject<HTMLInputElement>,
+    onClick: React.MouseEventHandler
+}
+
+
+export default function SearchInput({onClick, searchRef }:SearchInputProps) {
+   
     return (
         <div className='search-input'>
-            <input type='text' placeholder='Поиск...'/>
+            <input
+                ref={searchRef}
+                type='text'
+                placeholder='Поиск...' />
             <div className='button-container'>
-                <ButtonSearch>
+                <ButtonSearch onClick={onClick }>
                     <SpriteIcon id='search' />
                 </ButtonSearch>
             </div>
         </div>
-
     );
 }
