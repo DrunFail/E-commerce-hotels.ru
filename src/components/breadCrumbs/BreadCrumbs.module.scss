@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--clr-dark-blue);
+    column-gap: 5px;
+    padding-block: 50px;
+
+    p:not(:last-child){
+        &:after{
+            content: "/ ";
+            
+        }
+    }
+    p:last-child{
+        opacity: 0.5;
+    }
+}

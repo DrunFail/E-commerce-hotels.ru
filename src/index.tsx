@@ -21,12 +21,12 @@ const router = createBrowserRouter([
                 element: <CartList />
             },
             {
-                path: "catalog",
+                path: "kosmetika-i-gigiena",
                 element: <CatalogPage />,
             },
 
             {
-                path: "catalog/:catalogId",
+                path: "kosmetika-i-gigiena/:categoryId",
                 element: <ProductDetail />
             },
             {
