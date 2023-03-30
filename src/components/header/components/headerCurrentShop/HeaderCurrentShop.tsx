@@ -1,17 +1,17 @@
-import { ReactNode } from 'react';
+import SpriteIcon from '../../../spriteIcon/SpriteIcon';
 import styles from './HeaderCurrentShop.module.scss';
 
+
 interface HeaderCurrentShopProps {
-    children: ReactNode,
     address: string,
     description: string
 }
 
 
-export default function HeaderCurrentShop({children, address, description }: HeaderCurrentShopProps) {
+export default function HeaderCurrentShop({address, description }: HeaderCurrentShopProps) {
     return (
         <div className={styles.currentShop}>
-            {children}
+            <SpriteIcon id='location' />
             <p>{address}</p>
             <p>{description}</p>
         </div>

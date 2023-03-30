@@ -1,17 +1,12 @@
-import { ReactNode } from "react";
+import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import styles from './ButtonCatalog.module.scss';
 
 
-interface ButtonCatalogProps {
-    text: string,
-    children: ReactNode
-}
-
-export default function ButtonCatalog({text, children }:ButtonCatalogProps) {
+export default function ButtonCatalog() {
     return (
         <button type='button' className={styles.catalog }>
-            {text}
-            {children}
+            Каталог
+            <SpriteIcon id='catalog' />
         </button>
     );
 }

@@ -44,7 +44,7 @@ export default function FilterListRow({ dataList }: FilterListRowProps) {
         <div className={styles.filter}>
             {dataList.map((elem, index) =>
                 <div key={index} className={styles.item }>
-                    <input onChange={(e) => handleChangeInput(e, index, 'typeProduct')} type="radio" id={'typeProduct2' + index} value={elem} name='typeProduct2'/>
+                    <input onChange={(e) => handleChangeInput(e, index, 'Уход за телом')} type="radio" id={'typeProduct2' + index} value={elem} name='typeProduct2'/>
                     <label htmlFor={'typeProduct2' + index}>
                             {renderString(elem, index)}
                     </label>

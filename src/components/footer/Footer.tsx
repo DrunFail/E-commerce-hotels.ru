@@ -4,9 +4,10 @@ import ButtonTelegram from '../../UI/buttons/messengers/telegram/ButtonTelegram'
 import ButtonWhatsapp from '../../UI/buttons/messengers/whatsapp/ButtonWhatsapp';
 import InputSubscribe from '../../UI/inputs/inputSubscribe/inputSubscribe';
 import Logo from '../../UI/logo/Logo';
-import PaymentMethodsBlock from '../../UI/paymentMethodsBlock/PaymentMethodsBlock';
-import ContactsBlock from '../contactsBlock/ContactsBlock';
-import HeaderEmailFeedback from '../headerEmailFeedback/HeaderEmailFeedback';
+import HeaderEmailFeedback from '../header/components/headerEmailFeedback/HeaderEmailFeedback';
+import ContactsBlock from './components/contactsBlock/ContactsBlock';
+import NavBlock from './components/navBlock/NavBlock';
+import PaymentMethodsBlock from './components/paymentMethodsBlock/PaymentMethodsBlock';
 import styles from './Footer.module.scss';
 
 
@@ -17,16 +18,18 @@ export default function Footer() {
             <div className={styles.container}>
                 <div className={styles.logoContainer}>
                     <div className={styles.logo}>
+                        <Logo />
+                        {size < 800 &&
+                            <ButtonDownload color='orange' />}
 
-                        <Logo href="/" />
-                        {size < 800 && <ButtonDownload color='orange'/>}
-                        <p>Компания «Султан» — снабжаем розничные магазины товарами
-                            "под ключ" в Кокчетаве и Акмолинской области</p>
+                        <p>Компания «Султан» — снабжаем розничные
+                            магазины товарами
+                            "под ключ" в Кокчетаве и Акмолинской
+                            области</p>
 
                     </div>
                     <div className={styles.subscribe}>
                         <p>Подпишись на скидки и акции</p>
-
                         <InputSubscribe />
                     </div>
 
@@ -35,29 +38,9 @@ export default function Footer() {
                 </div>
                 
                 <div className={styles.content}>
-                    <nav role='navigation'>
-                        <div>
-                            <h3>Меню сайта:</h3>
-                            <ul>
-                                <li>О компании</li>
-                                <li>Доставка и оплата</li>
-                                <li>Возврат</li>
-                                <li>Контакты</li>
-                            </ul>
 
-                        </div>
+                    <NavBlock />
 
-                        <div>
-                            <h3>Категории:</h3>
-                            <ul>
-                                <li>Бытовая химия</li>
-                                <li>Косметика и гигиена</li>
-                                <li>Товары для дома</li>
-                                <li>Товары для детей и мам</li>
-                                <li>Посуда</li>
-                            </ul>
-                        </div>
-                    </nav>
                     <div className={styles.priceList}>
                         {size < 800 ||
                             <>

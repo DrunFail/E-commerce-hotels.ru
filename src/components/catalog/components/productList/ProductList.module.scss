@@ -9,5 +9,7 @@
 @media only screen and (max-width: 50em){
     .section{
         justify-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, 290px);
     }
 }

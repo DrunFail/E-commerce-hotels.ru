@@ -1,5 +1,4 @@
-
-import SpriteIcon from '../spriteIcon/SpriteIcon';
+import SpriteIcon from '../../../spriteIcon/SpriteIcon';
 import styles from './HeaderEmailFeedback.module.scss';
 
 interface HeaderEmailFeedbackProps {

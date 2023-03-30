@@ -1,19 +1,26 @@
 import { useParams } from 'react-router-dom';
-import data from '../../../../fakeData/data.json';
 import { useResize } from '../../../../hooks/useResize';
+import { useAppSelector } from '../../../../redux/hooks';
 import ButtonCounter from '../../../../UI/buttons/buttonCounter/ButtonCounter';
 import ButtonDownload from '../../../../UI/buttons/buttonDownload/ButtonDownload';
 import ButtonInCart from '../../../../UI/buttons/buttonInCart/ButtonInCart';
 import ButtonShare from '../../../../UI/buttons/buttonShare/ButtonShare';
 import VolumeIcon from '../../../../UI/volumeIcon/VolumeIcon';
+import { selectProductById } from '../../redux/productSlice';
 import styles from './ProductDetail.module.scss';
 
 
 export default function ProductDetail() {
-    const { categoryId } = useParams();
-    const product = data.filter(elem => elem.code.toString() === categoryId)[0];
-
     const size = useResize();
+    const { categoryId } = useParams();
+
+    if (!categoryId) {
+        throw new Error('invalid product id');
+    }
+    const product = useAppSelector(state => selectProductById(state,+categoryId))
+    if (!product) {
+        throw new Error('dont fetch product by id - details');
+    }
 
 
     return (

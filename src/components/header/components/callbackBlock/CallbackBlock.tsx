@@ -1,5 +1,5 @@
 import styles from './CallbackBlock.module.scss';
-import CallbackImg from '../../assets/img/callback.png';
+import CallbackImg from '../../../../assets/img/callback.png';
 
 
 const callbackData = {

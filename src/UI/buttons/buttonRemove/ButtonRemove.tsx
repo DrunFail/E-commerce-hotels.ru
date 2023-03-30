@@ -8,9 +8,14 @@ interface ButtonRemoveProps {
 }
 
 
-export default function ButtonRemove({onClick }: ButtonRemoveProps) {
+export default function ButtonRemove({ onClick }: ButtonRemoveProps) {
     return (
-        <button type='button' onClick={onClick} className={styles.button}>
+        <button
+            type='button'
+            onClick={onClick}
+            className={styles.button}
+            aria-label='button remove'        >
+
             <SpriteIcon id={"remove"} />
         </button>
     );

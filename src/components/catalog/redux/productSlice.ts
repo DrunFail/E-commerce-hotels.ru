@@ -3,16 +3,20 @@ import { RootState } from '../../../redux/store/store';
 import { ProductItem } from '../interfaces/interfaces';
 import data from '../../../fakeData/data.json';
 
-const local = 'productList-hotels.ru';
+const LOCAL = 'productList-hotels.ru';
+
 
 const initialState = (): ProductItem[] => {
-    let item = localStorage.getItem(local)
-    if (item) {
+    let item = localStorage.getItem(LOCAL);
+    if (item && item.length) {
         return JSON.parse(item)
     } else {
+        localStorage.setItem(LOCAL, JSON.stringify(data))
         return data
     }
 }
+
+
 
 
 export const productSlice = createSlice({
@@ -23,18 +27,14 @@ export const productSlice = createSlice({
 
         addNewProduct(state, action: PayloadAction<ProductItem>) {
             state.push(action.payload)
-            localStorage.setItem(local, JSON.stringify(state))
+            localStorage.setItem(LOCAL, JSON.stringify(state))
         },
 
         deleteProduct(state, action: PayloadAction<number>) {
             const newState = state.filter((elem) => elem.code !== action.payload)
-            localStorage.setItem(local, JSON.stringify(newState))
-            return newState
+            localStorage.setItem(LOCAL, JSON.stringify(newState))
+             return newState
         },
-
-
-       
-
     },
 
 })

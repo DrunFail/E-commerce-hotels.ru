@@ -1,0 +1,11 @@
+.page-navigation{
+    padding-block: 60px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10rem;
+
+    & > a{
+        font-size: 30px;
+        color: var(--clr-dark-blue);
+    }
+}

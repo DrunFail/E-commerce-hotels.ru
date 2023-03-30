@@ -4,7 +4,7 @@
     grid-template-columns: 281px 480px repeat(3, 1fr);
     padding-block: 50px;
     align-items: center;
-    border-block-end: 1px dashed var(--clr-dark-blue);
+    border-block-end: 1px dashed rgba(63, 78, 101, 0.3);
 
     img {
         max-inline-size: 100%;
@@ -21,6 +21,10 @@
         .volume {
             display: flex;
             column-gap: 5px;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--clr-dark-blue);
 
             svg {
                 inline-size: 15px;
@@ -40,7 +44,10 @@
         }
 
         .description {
-            block-size: 82px;
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--clr-dark-blue);
+            
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 5;
@@ -48,20 +55,10 @@
         }
     }
 
-
-    .counter {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        block-size: 23px;
-        inline-size: 113px;
-        text-align: center;
-        align-items: center;
-
-        button {
-            padding: 4px 14px;
-            background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
-            border: none;
-            border-radius: 80px;
-        }
+    .price{
+        font-size: 30px;
+        line-height: var(--lh-second);
+        color: var(--clr-black);
+        font-weight: 700;
     }
 }

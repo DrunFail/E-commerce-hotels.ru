@@ -16,38 +16,18 @@
         margin-block-end: 2rem;
     }
 
-    fieldset {
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-columns: 1fr 3fr;
-        grid-template-areas: 'leg inp';
-
-        legend {
-            grid-area: leg;
-            font-size: 20px;
-            line-height: 1.5;
-            font-weight: 500;
-            color: var(--clr-black);
-        }
-
-        & > div {
-            grid-area: inp;
-            display: grid;
-            grid-template-columns: repeat(4, max-content);
-            column-gap: 20px;
-        }
-    }
+    
 
 
-    .fieldVolume {
+    fieldVolume {
         inline-size: 100%;
-        display: grid;
+        
         align-items: center;
         grid-template-columns: 1fr 3fr;
-        grid-template-areas: 'leg inp';
+        
 
         legend {
-            grid-area: leg;
+           
             font-size: 20px;
             line-height: 1.5;
             font-weight: 500;
@@ -55,14 +35,14 @@
         }
 
         & > div {
-            grid-area: inp;
+            
             display: grid;
             grid-template-columns: max-content max-content;
             column-gap: 20px;
         }
     }
 
-    button {
+    & > button {
         @include primary-button;
         block-size: 80px;
         border-radius: 80px;
@@ -71,19 +51,19 @@
         font-weight: 500;
     }
 
-    & > div {
-        block-size: 40px;
+    .container {
+        min-block-size: 40px;
         display: grid;
         grid-template-columns: 1fr 3fr;
 
-        label {
+        & > label, & > p, & > legend {
             font-size: 20px;
             line-height: 1.5;
             font-weight: 500;
             color: var(--clr-black);
         }
 
-        input {
+        & > input {
             border-radius: 10px;
             padding-inline: 10px 20px;
             font-size: 20px;

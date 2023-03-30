@@ -1,5 +1,5 @@
-import ButtonClose from "../../../UI/buttons/buttonClose/ButtonClose";
-import ButtonDoubleCheck from "../../../UI/buttons/buttonDoubleCheck/ButtonDoubleCheck";
+import ButtonClose from '../../../../UI/buttons/buttonClose/ButtonClose';
+import ButtonDoubleCheck from '../../../../UI/buttons/buttonDoubleCheck/ButtonDoubleCheck';
 import styles from './OrderConfirmMessage.module.scss';
 
 

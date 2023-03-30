@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useAppDispatch } from "../../../redux/hooks";
 import InputCheckbox from "../../../UI/inputs/inputCheckbox/InputCheckbox";
 import InputField from "../../../UI/inputs/inputField/InputField";
@@ -7,10 +7,12 @@ import InputRadio from "../../../UI/inputs/inputRadio/InputRadio";
 import TextArea from "../../../UI/textArea/TextArea";
 import { ProductItem } from "../../catalog/interfaces/interfaces";
 import { addNewProduct } from "../../catalog/redux/productSlice";
+import { filterOptions } from "../../filters/constants";
+import TypesOfCare from "../components/typesOfCare/TypesOfCare";
 import styles from './AddNewProduct.module.scss';
 
 
-const initialProduct = {
+const initialProduct: ProductItem = {
     url: "https://ir.ozone.ru/s3/multimedia-s/wc1000/6061382800.jpg ",
     title: "",
     volume: "",
@@ -42,18 +44,13 @@ export default function AddNewProduct() {
         setNewProduct({ ...newProduct, volume: e.target.value })
     }
 
-    const handleTypeCare = (e: React.FormEvent<HTMLFieldSetElement>) => {
-        const el = (e.currentTarget as HTMLFieldSetElement).elements;
-
-        const x = [];
-        for (let elem of el) {
-            if ((elem as HTMLInputElement).checked) {
-
-                x.push((elem as HTMLInputElement).value)
-
-            }
+    const handleTypeCare = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.checked) {
+            setNewProduct({ ...newProduct, typeCare: [...newProduct.typeCare, e.target.value] })
+        } else {
+            setNewProduct({...newProduct, typeCare: [...newProduct.typeCare.filter(elem => elem !== e.target.value)] })
         }
-        setNewProduct({ ...newProduct, typeCare: [...x] })
+       
 
     }
 
@@ -94,7 +91,7 @@ export default function AddNewProduct() {
         <form onSubmit={handleSubmit} className={styles.form}>
             <h2>Добавление нового продукта</h2>
 
-            <div>
+            <div className={styles.container}>
                 <InputField
                     title='Название'
                     id='title'
@@ -111,7 +108,7 @@ export default function AddNewProduct() {
                 name="description" />
 
 
-            <fieldset className={styles.fieldVolume}>
+            <div className={styles.container}>
                 <legend>Тип размера</legend>
                 <div>
                     <InputRadio
@@ -128,9 +125,9 @@ export default function AddNewProduct() {
                         handleChange={handleVolume} />
 
                 </div>
-            </fieldset>
+            </div>
 
-            <div>
+            <div className={styles.container} >
                 <InputField
                     title={'Объем'}
                     id={'size'}
@@ -139,7 +136,7 @@ export default function AddNewProduct() {
                     handleChange={handleSize}
                 />
             </div>
-            <div>
+            <div className={styles.container}>
                 <InputField
                     title={'Производитель'}
                     id={'manufacturer'}
@@ -148,16 +145,16 @@ export default function AddNewProduct() {
                     handleChange={handleManufacturer}
                 />
             </div>
-            <div>
-            <InputField
-                title={'Брэнд'}
-                id={'brand'}
-                name={'brand'}
-                value={newProduct.brand}
-                handleChange={handleBrand}
-            />
+            <div className={styles.container}>
+                <InputField
+                    title={'Брэнд'}
+                    id={'brand'}
+                    name={'brand'}
+                    value={newProduct.brand}
+                    handleChange={handleBrand}
+                />
             </div>
-            <div>
+            <div className={styles.container}>
 
                 <InputField
                     title={'Код'}
@@ -167,7 +164,7 @@ export default function AddNewProduct() {
                     handleChange={handleCode}
                 />
             </div>
-            <div>
+            <div className={styles.container}>
                 <InputField
                     title={'Цена'}
                     id={'price'}
@@ -176,7 +173,8 @@ export default function AddNewProduct() {
                     handleChange={handlePrice}
                 />
             </div>
-            <div>
+
+            <div className={styles.container}>
                 <InputField
                     title={'Url изображения'}
                     id={'url'}
@@ -185,37 +183,9 @@ export default function AddNewProduct() {
                     handleChange={handleUrlImage}
                 />
             </div>
-
-            <fieldset onChange={handleTypeCare}>
-                <legend>Тип ухода</legend>
-                <div>
-                    <InputCheckbox
-                        value="body"
-                        name="typeCare"
-                        id="body"
-                        title="Для тела" />
-
-                    <InputCheckbox
-                        value='face'
-                        name='typeCare'
-                        id='face'
-                        title='Для лица' />
-
-                    <InputCheckbox
-                        value='foot'
-                        name='typeCare'
-                        id='foot'
-                        title='Для ног' />
-
-                    <InputCheckbox
-                        value='hand'
-                        name='typeCare'
-                        id='hand'
-                        title='Для рук' />
-                </div>
-            </fieldset >
-
-
+            <div className={styles.container}>
+                <TypesOfCare typeCare={newProduct.typeCare} handleTypeCare={handleTypeCare} />
+            </div>
             <button type='submit'>Добавить продукт</button>
 
         </form>
