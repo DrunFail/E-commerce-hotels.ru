@@ -11,6 +11,7 @@ import AdminPanel from './components/admin/adminPanel/AdminPanel';
 import AddNewProduct from './components/admin/addNewProduct/AddNewProduct';
 import CartList from './components/cart/components/cartList/CartList';
 import PageNavigation from './components/pageNavigation/PageNavigation';
+import ErrorPage from './components/errorPage/ErrorPage';
 
 const router = createBrowserRouter([
     {
@@ -38,14 +39,15 @@ const router = createBrowserRouter([
                 path: "admin",
                 element: <AdminPanel />
             },
-               
-                    {
-                        path: 'admin/add-new-product',
-                    element: <AddNewProduct />}
-                
-            
 
-
+            {
+                path: 'admin/add-new-product',
+                element: <AddNewProduct />
+            },
+            {
+                path: '*',
+                element: <ErrorPage />
+            }
         ]
     },
 ]);
@@ -59,8 +61,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <Provider store={store}>
-    <React.StrictMode>
-        <RouterProvider router={router} />
+        <React.StrictMode>
+            <RouterProvider router={router} />
         </React.StrictMode>
     </Provider>
 );

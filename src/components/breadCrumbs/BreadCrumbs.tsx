@@ -26,7 +26,7 @@ export default function BreadCrumbs() {
     let renderedSubcategory;
     if (category === 'kosmetika-i-gigiena' && product) {
         renderedSubcategory = productData?.title
-    } else if (product) {
+    } else if (product && categoryList[product]) {
 
         renderedSubcategory = categoryList[product].name
     }
