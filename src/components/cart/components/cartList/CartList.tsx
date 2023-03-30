@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 import useCartTotalPrice from '../../hooks/useCartTotalPrice';
 import { clearCart, selectCart } from '../../redux/cartSlice';
 import CartListItem from '../cartListItem/CartListItem';
+import EmptyCart from '../emptyCart/EmptyCart';
 import OrderConfirmMessage from '../orderConfirmMessage/OrderConfirmMessage';
 import styles from './CartList.module.scss';
 
@@ -14,7 +15,8 @@ export default function CartList() {
     const dispatch = useAppDispatch();
 
     const { totalPrice} = useCartTotalPrice();
-    
+
+    if(!cart.length) return <EmptyCart />
 
     return (
         <section className={styles.section}>
