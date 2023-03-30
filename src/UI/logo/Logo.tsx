@@ -1,18 +1,17 @@
-import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import SpriteIcon from "../../components/spriteIcon/SpriteIcon";
 import styles from './Logo.module.scss';
 
-interface LogoProps {
-    href: string
-}
 
-
-export default function Logo({href }: LogoProps) {
+export default function Logo() {
     return (
         <div className={styles.logo }>
-            <a href={href }>
+            <Link
+                to='/'
+                aria-label='homepage logo link'
+            >
                 <SpriteIcon id="logo" />
-            </a>
+            </Link>
         </div>
     );
 }

@@ -1,11 +1,11 @@
-import ButtonRemove from "../../../UI/buttons/buttonRemove/ButtonRemove";
-import { ProductItem } from "../../catalog/interfaces/interfaces";
-import SpriteIcon from "../../spriteIcon/SpriteIcon";
-import { ShoppingCartItem } from "../interface/interfaces";
 import styles from './CartListItem.module.scss';
-import data from '../../../fakeData/data.json';
-import { decrementCartItem, deleteCartItem, incrementCartItem } from "../redux/cartSlice";
-import { useAppDispatch } from "../../../redux/hooks";
+import data from '../../../../fakeData/data.json';
+import SpriteIcon from '../../../spriteIcon/SpriteIcon';
+import ButtonRemove from '../../../../UI/buttons/buttonRemove/ButtonRemove';
+import { useAppDispatch } from '../../../../redux/hooks';
+import { ShoppingCartItem } from '../../interface/interfaces';
+import { decrementCartItem, deleteCartItem, incrementCartItem } from '../../redux/cartSlice';
+import ButtonCounter from '../../../../UI/buttons/buttonCounter/ButtonCounter';
 
 
 interface CartListItemProps {
@@ -20,9 +20,15 @@ export default function CartListItem({ elem }: CartListItemProps) {
         throw new Error
     }
     const deleteItem = () => dispatch(deleteCartItem(cartItem.code))
-    
 
+    const incHandler = () => {
+        dispatch(incrementCartItem(cartItem.code));
+    }
 
+    const decHandler = () => {
+        dispatch(decrementCartItem(cartItem.code));
+    }
+    const volume = cartItem.volume.toLowerCase() == 'объем' 
 
 
     return (
@@ -32,20 +38,21 @@ export default function CartListItem({ elem }: CartListItemProps) {
             
             <div className={styles.text }>
                 <div className={styles.volume }>
-                    {cartItem.volume.toLowerCase() == 'объем'
+                    {volume
                         ? <SpriteIcon id='bottle' />
                         : <SpriteIcon id='box' />}
-                    <p>{cartItem.size}</p>
+                    <p>{cartItem.size} {volume ? 'мл' : 'г'}</p>
                 </div>
                 <p className={styles.mainTitle }>{cartItem.brand} {cartItem.title}</p>
                 <p className={styles.description }>{cartItem.description}</p>
             </div>
-            <div className={styles.counter}>
-                <button onClick={() => dispatch(decrementCartItem(cartItem.code)) }>-</button>
-                {elem.count }
-                <button onClick={() => dispatch(incrementCartItem(cartItem.code)) }>+</button>
-            </div>
-            <div>{cartItem.price}</div>
+           
+            <ButtonCounter
+                incHandler={incHandler}
+                decHandler={decHandler}
+                count={elem.count }            />
+
+            <div className={styles.price}>{cartItem.price} ₸</div>
             <div>
                 <ButtonRemove onClick={deleteItem} />
             </div>

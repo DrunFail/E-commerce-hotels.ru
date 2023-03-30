@@ -1,15 +1,11 @@
-import { ReactNode } from "react";
+import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import styles from './ButtonBurger.module.scss';
 
-interface ButtonBurgerProps {
-    children: ReactNode
-}
 
-
-export default function ButtonBurger({ children }:ButtonBurgerProps) {
+export default function ButtonBurger() {
     return (
         <button className={styles.button}>
-            {children}
+            <SpriteIcon id='burger' />
         </button>
     );
 }

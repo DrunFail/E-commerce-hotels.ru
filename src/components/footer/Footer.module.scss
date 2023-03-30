@@ -13,7 +13,7 @@
     --footer-menu-fs: 14px;
     background-color: var(--footer-bg-color);
     color: var(--footer-font-color);
-    line-height: 1.5;
+    
 
     h3 {
         font-size: var(--footer-heading-fs);
@@ -120,12 +120,25 @@
     }
 }
 
+@media only screen and (max-width: 1370px){
+    .footer{
+        --footer-main-column-gap: clamp(20px, 5vw, 60px);
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 1160px){
+    .footer .container .content {
+        grid-template-columns: repeat(2, minmax(max-content, 1fr));
+    }
+}
+
 @media only screen and (max-width: 50em) {
     .footer .container {
         grid-auto-rows: max-content;
         grid-template-columns:1fr;
         row-gap: 30px;
-        padding-inline: 15px;
+        
         padding-block-start: 15px;
 
         .logoContainer {

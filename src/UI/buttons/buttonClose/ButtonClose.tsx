@@ -4,7 +4,7 @@ import styles from './ButtonClose.module.scss';
 
 export default function ButtonClose() {
     return (
-        <Link to='/catalog' className={styles.link }>
+        <Link to='/kosmetika-i-gigiena' className={styles.link }>
             <SpriteIcon id='close' />
         </Link>
 

@@ -3,19 +3,24 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import './styles/index.scss';
 import CatalogPage from './components/catalog/pages/CatalogPage';
-import CartList from './components/cart/cartList/CartList';
 import Layout from './components/layout/Layout';
 import ProductDetail from './components/catalog/components/productDetail/ProductDetail';
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
 import AdminPanel from './components/admin/adminPanel/AdminPanel';
 import AddNewProduct from './components/admin/addNewProduct/AddNewProduct';
+import CartList from './components/cart/components/cartList/CartList';
+import PageNavigation from './components/pageNavigation/PageNavigation';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
         children: [
+            {
+                index: true,
+                element: <PageNavigation />
+            },
             {
                 path: "cart",
                 element: <CartList />

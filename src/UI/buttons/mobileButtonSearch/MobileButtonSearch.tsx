@@ -1,17 +1,13 @@
 import { ReactNode } from "react";
+import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import styles from './MobileButtonSearch.module.scss';
 
-interface MobileButtonSearchProps {
-    children: ReactNode,
-    text: string
-}
 
-
-export default function MobileButtonSearch({ children, text }: MobileButtonSearchProps) {
+export default function MobileButtonSearch() {
     return (
         <button type='button' className={styles.button }>
-            {children}
-            {text}
+            <SpriteIcon id='search' />
+            Поиск
         </button>
     
     );

@@ -1,4 +1,3 @@
-import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import ButtonSearch from "../../buttons/buttonSearch/ButtonSearch";
 import './SearchInput.scss';
 
@@ -18,9 +17,7 @@ export default function SearchInput({onClick, searchRef }:SearchInputProps) {
                 type='text'
                 placeholder='Поиск...' />
             <div className='button-container'>
-                <ButtonSearch onClick={onClick }>
-                    <SpriteIcon id='search' />
-                </ButtonSearch>
+                <ButtonSearch onClick={onClick } />
             </div>
         </div>
     );

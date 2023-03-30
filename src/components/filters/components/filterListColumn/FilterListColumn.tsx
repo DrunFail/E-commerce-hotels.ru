@@ -29,9 +29,9 @@ export default function FilterListColumn({ nameFilter, dataList }: FilterListCol
                 {dataList.map((elem, index) =>
                     <div key={index} className={styles.item}>
                         <InputRadio
-                            id={'typeProduct' + index}
+                            id={nameFilter + index}
                             value={elem}
-                            name='typeProduct'
+                            name={nameFilter }
                             handleChange={(e) => handleChangeInput(e, index, 'typeProduct2')} />
 
                     </div>

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import ButtonCartInludes from "../../../../UI/buttons/buttonCartIncludes/ButtonCartIncludes";
 import ButtonInCart from "../../../../UI/buttons/buttonInCart/ButtonInCart";
 import VolumeIcon from "../../../../UI/volumeIcon/VolumeIcon";
+import useCartTotalPrice from "../../../cart/hooks/useCartTotalPrice";
 import { ProductItem } from "../../interfaces/interfaces";
 import styles from './ProductListItem.module.scss';
 
@@ -11,6 +13,9 @@ interface ProductListItemProps {
 
 
 export default function ProductListItem({ item }: ProductListItemProps) {
+
+    const { status } = useCartTotalPrice(item.code)
+    
 
     return (
         <article className={styles.article}>
@@ -31,7 +36,10 @@ export default function ProductListItem({ item }: ProductListItemProps) {
             </div>
             <div className={styles.price}>
                 <p>{item.price} ₸</p>
-                <ButtonInCart code={item.code } />
+                {status
+                    ? <ButtonCartInludes />
+                    : <ButtonInCart code={item.code} />}
+                    
             </div>
 
         </article>

@@ -10,7 +10,12 @@ interface ButtonArrowRightProps {
 
 export default function ButtonArrowRight({handleClick, showFilter }:ButtonArrowRightProps) {
     return (
-        <button onClick={ handleClick} className={styles[showFilter ? 'button-open' : 'button']} >
+        <button
+        type='button'
+            onClick={handleClick}
+            className={styles[showFilter ? 'button-open' : 'button']}
+            aria-label='confirm and send button'
+        >
             <SpriteIcon id='arrow-right' />
         </button>
     
