@@ -7,19 +7,9 @@ import FilterRenderedList from "../../filters/components/filterRenderedList/Filt
 import { filterOptions } from "../../filters/constants";
 
 
-
-interface FilterData {
-    price: { from: number, to: number },
-    manufactList: { name: string, count: number, checked: boolean },
-    brandList: { name: string, count: number, checked: boolean }
-    
-}
-
 export default function CatalogPage() {
     const size = useResize();
- 
-
-
+    
     return (
         <>
 
@@ -39,7 +29,7 @@ export default function CatalogPage() {
                 <div className={styles.catalog}>
                     <ProductList />
                 </div>
-
+                
             </div>
         </>
     );
