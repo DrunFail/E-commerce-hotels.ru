@@ -12,6 +12,7 @@ import AddNewProduct from './components/admin/addNewProduct/AddNewProduct';
 import CartList from './components/cart/components/cartList/CartList';
 import PageNavigation from './components/pageNavigation/PageNavigation';
 import ErrorPage from './components/errorPage/ErrorPage';
+import EditProduct from './components/admin/editProduct/EditProduct';
 
 const router = createBrowserRouter([
     {
@@ -37,12 +38,20 @@ const router = createBrowserRouter([
             },
             {
                 path: "admin",
-                element: <AdminPanel />
+                element: <AdminPanel />,
+                children: [{
+                    path: 'admin/edit-product/:editProductId',
+                    element: <EditProduct />
+                }]
             },
 
             {
                 path: 'admin/add-new-product',
                 element: <AddNewProduct />
+            },
+            {
+                path: 'admin/edit-product/:editProductId',
+                element: <EditProduct />
             },
             {
                 path: '*',
