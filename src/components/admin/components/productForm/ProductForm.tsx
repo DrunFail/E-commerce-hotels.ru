@@ -1,7 +1,7 @@
 import InputField from "../../../../UI/inputs/inputField/InputField";
 import InputRadio from "../../../../UI/inputs/inputRadio/InputRadio";
 import TextArea from "../../../../UI/textArea/TextArea";
-import { ProductItem } from "../../../catalog/interfaces/interfaces";
+import { ProductItem, SizeUnit, VolumeType } from "../../../catalog/interfaces/interfaces";
 import TypesOfCare from "../typesOfCare/TypesOfCare";
 import styles from './ProductForm.module.scss';
 
@@ -44,18 +44,18 @@ export default function ProductForm({product,handleSubmit, handleInputString, ha
                 <div>
                     <InputRadio
                         id="volume"
-                        value="Объем"
-                        name="typVolume"
-                        checked={product.volume === 'объем'}
+                        value={VolumeType.bottle}
+                        name="VolumeType"
+                        checked={product.volume === VolumeType.bottle}
                         handleChange={handleVolume}
                     />
 
                     <InputRadio
                         id="weight"
-                        value="Вес"
-                        name="typVolume"
+                        value={VolumeType.box}
+                        name="VolumeType"
                         handleChange={handleVolume}
-                        checked={product.volume === 'вес'}
+                        checked={product.volume === VolumeType.box}
                     />
 
                 </div>

@@ -1,4 +1,4 @@
-import { ProductItem } from "../../catalog/interfaces/interfaces";
+import { ProductItem, SizeUnit, VolumeType } from "../../catalog/interfaces/interfaces";
 import ProductForm from "../components/productForm/ProductForm";
 import useProductForm from "../hooks/useProductForm";
 import styles from './AddNewProduct.module.scss';

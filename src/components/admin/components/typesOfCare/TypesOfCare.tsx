@@ -49,6 +49,7 @@ export default function TypesOfCare({ typeCare, handleTypeCare }: TypesOfCarePro
                                     value={elem}
                                     name='typeCare'
                                     onChange={handleTypeCare}
+                                    checked={typeCare.includes(elem) }
                                 />
                                 <label htmlFor={elem}>
                                     {elem}

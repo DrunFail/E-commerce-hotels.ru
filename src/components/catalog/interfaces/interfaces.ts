@@ -11,3 +11,13 @@ export interface ProductItem {
     price: number,
     typeCare: string[]
 }
+
+export enum SizeUnit {
+    bottle = 'мл',
+    box = 'г'
+}
+
+export enum VolumeType {
+    bottle = 'Объем',
+    box = 'Вес'
+}
