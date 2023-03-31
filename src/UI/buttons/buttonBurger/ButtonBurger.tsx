@@ -2,10 +2,20 @@ import SpriteIcon from "../../../components/spriteIcon/SpriteIcon";
 import styles from './ButtonBurger.module.scss';
 
 
-export default function ButtonBurger() {
+interface ButtonBurgerProps {
+    onClick: React.MouseEventHandler<HTMLButtonElement>,
+    status: boolean
+}
+
+export default function ButtonBurger({onClick, status }: ButtonBurgerProps) {
     return (
-        <button className={styles.button}>
-            <SpriteIcon id='burger' />
+        <button
+            type='button'
+            className={styles.button}
+            aria-label='menu'
+            onClick={onClick }
+        >
+            {status ? <SpriteIcon id='close' /> : <SpriteIcon id='burger' />}
         </button>
     );
 }
