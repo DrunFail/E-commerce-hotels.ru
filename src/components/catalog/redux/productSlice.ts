@@ -30,6 +30,12 @@ export const productSlice = createSlice({
             localStorage.setItem(LOCAL, JSON.stringify(state))
         },
 
+        editProduct(state, action: PayloadAction<ProductItem>) {
+           return  state.map(elem => elem.code === action.payload.code
+                ? action.payload
+                : elem)
+        },
+
         deleteProduct(state, action: PayloadAction<number>) {
             const newState = state.filter((elem) => elem.code !== action.payload)
             localStorage.setItem(LOCAL, JSON.stringify(newState))
@@ -40,6 +46,7 @@ export const productSlice = createSlice({
 })
 
 export const { addNewProduct,
+    editProduct,
     deleteProduct,
 } = productSlice.actions
 

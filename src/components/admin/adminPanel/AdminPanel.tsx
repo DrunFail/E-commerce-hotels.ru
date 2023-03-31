@@ -40,7 +40,10 @@ export default function AdminPanel() {
                             <td>{product.manufacturer}</td>
                             <td>{product.brand}</td>
                             <td>{product.price}</td>
-                            <td><ButtonRemove onClick={() => handleDeleteProduct(product.code)} /></td>
+                            <td>
+                                <ButtonRemove onClick={() => handleDeleteProduct(product.code)} />
+                                <Link to={ `edit-product/${product.code}`}>edit</Link>
+                            </td>
                         </tr>)}
 
                 </tbody>
