@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 import useCartTotalPrice from '../../hooks/useCartTotalPrice';
-import { clearCart, selectCart } from '../../redux/cartSlice';
+import { clearCart } from '../../redux/cartSlice';
+import { selectCart } from '../../redux/selectors';
 import CartListItem from '../cartListItem/CartListItem';
 import EmptyCart from '../emptyCart/EmptyCart';
 import OrderConfirmMessage from '../orderConfirmMessage/OrderConfirmMessage';

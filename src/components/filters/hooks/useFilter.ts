@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAppSelector } from "../../../redux/hooks";
 import { ProductItem } from "../../catalog/interfaces/interfaces";
-import { selectFilter } from "../redux/filterSlice";
+import { selectFilter } from "../redux/selectors";
 
 export default function useFilter(productList:ProductItem[]) {
     const filter = useAppSelector(selectFilter);

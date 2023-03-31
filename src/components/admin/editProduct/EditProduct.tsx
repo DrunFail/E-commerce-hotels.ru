@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useAppSelector } from '../../../redux/hooks';
-import { selectProductById } from '../../catalog/redux/productSlice';
+import { selectProductById } from '../../catalog/redux/selectors';
 import ProductForm from '../components/productForm/ProductForm';
 import useProductForm from '../hooks/useProductForm';
 

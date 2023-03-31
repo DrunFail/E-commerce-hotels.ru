@@ -6,7 +6,7 @@ import ButtonDownload from '../../../../UI/buttons/buttonDownload/ButtonDownload
 import ButtonInCart from '../../../../UI/buttons/buttonInCart/ButtonInCart';
 import ButtonShare from '../../../../UI/buttons/buttonShare/ButtonShare';
 import VolumeIcon from '../../../../UI/volumeIcon/VolumeIcon';
-import { selectProductById } from '../../redux/productSlice';
+import { selectProductById } from '../../redux/selectors';
 import styles from './ProductDetail.module.scss';
 
 

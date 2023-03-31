@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAppSelector } from "../../redux/hooks";
-import { selectProductById, selectProductTitleById } from "../catalog/redux/productSlice";
+import { selectProductById } from "../catalog/redux/selectors";
 import styles from './BreadCrumbs.module.scss';
 
 

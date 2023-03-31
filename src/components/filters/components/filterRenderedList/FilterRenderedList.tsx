@@ -5,7 +5,8 @@ import ButtonApplyFilter from "../../../../UI/buttons/buttonApplyFilter/ButtonAp
 import ButtonArrowRight from "../../../../UI/buttons/buttonArrowRight/ButtonArrowRight";
 import ButtonRemove from "../../../../UI/buttons/buttonRemove/ButtonRemove";
 import { filterOptions, handCareList } from "../../constants";
-import { resetFilterStatus, selectBrandFilter, selectManufactFilter, selectPriceFilter} from "../../redux/filterSlice";
+import { resetFilterStatus } from "../../redux/filterSlice";
+import { selectBrandFilter, selectManufactFilter, selectPriceFilter } from "../../redux/selectors";
 import FilterCheckbox from "../filterCheckbox/FilterCheckbox";
 import FilterListColumn from "../filterListColumn/FilterListColumn";
 import FilterPrice from "../filterPrice/FilterPrice";

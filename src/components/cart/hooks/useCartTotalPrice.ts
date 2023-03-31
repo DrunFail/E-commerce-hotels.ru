@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../../redux/hooks";
-import { selectProduct } from "../../catalog/redux/productSlice";
-import { selectCart } from "../redux/cartSlice";
+import { selectProduct } from "../../catalog/redux/selectors";
+import { selectCart } from "../redux/selectors";
 
 
 
