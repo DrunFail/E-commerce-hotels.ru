@@ -1,4 +1,5 @@
 import { RootState } from "../../../redux/store/store";
+import { ShoppingCartItem } from "../../cart/interface/interfaces";
 
 
 export const selectProduct = (state: RootState) => state.product;
@@ -13,3 +14,4 @@ export const selectProductTitleById = (state: RootState, id: number) => {
     const findItem = state.product.find(elem => elem.code === id)?.title;
     if (findItem) return findItem;
 };
+

@@ -6,7 +6,7 @@ import styles from './HeaderCartBlock.module.scss';
 
 export default function HeaderCartBlock() {
     const { totalPrice, cartLength } = useCartTotalPrice();
-
+    
     return (
         <Link to='cart' className={styles.cart}>
             <div className={styles.cartContainer }>
