@@ -8,23 +8,33 @@
     p:nth-child(1) {
         font-size: clamp(0.6rem, 1vw, 0.875rem);
         font-weight: 600;
-        line-height: 1.5;
+       
         align-self: flex-end;
     }
 
     p:nth-child(2) {
         font-size: clamp(0.5rem, 1vw, 0.75rem);
         font-weight: 300;
-        line-height: 1.5;
+       
         
     }
 
     & > a {
         font-size: 10px;
-        line-height: 1.5;
         align-self: flex-start;
         text-decoration: underline;
         color: inherit;
-        line-height: 1.5;
+        
+    }
+}
+
+@media only screen and (max-width: 50em){
+    .content{
+        p:nth-child(1){
+            font-size: 0.875rem;
+        }
+        p:nth-child(2){
+            font-size: 0.75rem;
+        }
     }
 }

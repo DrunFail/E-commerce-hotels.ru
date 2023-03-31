@@ -1,0 +1,56 @@
+.content {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: max-content;
+    align-content: center;
+    justify-items: flex-start;
+
+    & p {
+        font-size: 0.75rem;
+        font-weight: 300;
+        color: var(--clr-dark-blue);
+    }
+
+
+    .image {
+        display: grid;
+        grid-template-areas: 'img main' 'img phone' '.  text';
+        grid-template-columns: max-content max-content;
+        column-gap: 15px;
+
+        & svg {
+            grid-area: img;
+            inline-size: 18px;
+            aspect-ratio: 1/1;
+        }
+
+        p:nth-child(2) {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--clr-black);
+        }
+
+        p:last-child {
+            grid-area: text;
+        }
+    }
+
+    .phone {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 7px;
+        align-items:center;
+        padding-block-start: 13px;
+        svg {
+            inline-size: 30px;
+            aspect-ratio: 1/1;
+        }
+
+        a {
+            font-size: 10px;
+            text-decoration: underline;
+            color: inherit;
+            color: var(--clr-dark-blue);
+        }
+    }
+}

@@ -8,3 +8,9 @@
    @extend .feedback;
     grid-template-areas: 'desc-text' 'main-text';
 }
+
+@media only screen and (max-width: 50em){
+    .feedback{
+        @include header-info-block-mobile;
+    }
+}

@@ -12,6 +12,8 @@ import HeaderEmailFeedback from './components/headerEmailFeedback/HeaderEmailFee
 import HeaderCartBlock from './components/headerCartBlock/HeaderCartBlock';
 import CallbackBlock from './components/callbackBlock/CallbackBlock';
 import Navbar from './components/navbar/Navbar';
+import MobileMenu from './components/mobileMenu/MobileMenu';
+import { useState } from 'react';
 
 const nav_menu = [
     {
@@ -36,7 +38,11 @@ const nav_menu = [
 
 export default function Header() {
     const size = useResize();
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+    const toggleMenu = () => {
+        setShowMobileMenu(!showMobileMenu)
+    }
 
     return (
         <header>
@@ -45,19 +51,17 @@ export default function Header() {
                     {size > 800 &&
                         <>
 
-                        <HeaderCurrentShop
-                            address={'г. Кокчетав, ул. Ж. Ташенова 129Б'}
-                            description={'(Рынок Восточный)'}
-                        />
+                        <HeaderCurrentShop />
                         <HeaderEmailFeedback imgStatus={true} />
                         <Navbar menu={nav_menu} />
                         </>}
 
                     {size <= 800 &&
                         <>
-                            <ButtonBurger />
+                        <ButtonBurger onClick={toggleMenu} status={showMobileMenu} />
                             <Logo />
-                            <HeaderCartBlock />
+                        <HeaderCartBlock />
+                        {showMobileMenu && <MobileMenu />}
                         </>
                     }
 
