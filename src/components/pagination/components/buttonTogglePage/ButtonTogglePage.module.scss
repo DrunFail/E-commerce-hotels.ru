@@ -1,0 +1,18 @@
+.toRight{
+    
+        border:none;
+        background-color: transparent;
+    
+    & svg{
+        inline-size: 9px;
+        block-size: 16px;
+        fill: var(--clr-yellow);
+    }
+}
+
+.toLeft{
+    @extend .toRight;
+    & svg{
+        transform: rotate(180deg);
+    }
+}
