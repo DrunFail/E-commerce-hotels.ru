@@ -7,6 +7,7 @@ import { decrementCartItem, deleteCartItem, incrementCartItem } from '../../redu
 import ButtonCounter from '../../../../UI/buttons/buttonCounter/ButtonCounter';
 import { selectProductById } from '../../../catalog/redux/selectors';
 import { SizeUnit, VolumeType } from '../../../catalog/interfaces/interfaces';
+import React from 'react';
 
 
 interface CartListItemProps {
@@ -14,7 +15,7 @@ interface CartListItemProps {
 }
 
 
-export default function CartListItem({ elem }: CartListItemProps) {
+ function CartListItem({ elem }: CartListItemProps) {
     const dispatch = useAppDispatch();
 
     //получаем данные продукта из корзины по code
@@ -69,3 +70,5 @@ export default function CartListItem({ elem }: CartListItemProps) {
         </article>
     );
 }
+
+export default React.memo(CartListItem);

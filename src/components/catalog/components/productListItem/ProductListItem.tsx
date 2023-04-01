@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import ButtonCartInludes from "../../../../UI/buttons/buttonCartIncludes/ButtonCartIncludes";
 import ButtonInCart from "../../../../UI/buttons/buttonInCart/ButtonInCart";
@@ -12,7 +13,7 @@ interface ProductListItemProps {
 }
 
 
-export default function ProductListItem({ item }: ProductListItemProps) {
+function ProductListItem({ item }: ProductListItemProps) {
     //есть ли товар в корзине
     const { status } = useCartTotalPrice(item.code);
     
@@ -45,3 +46,5 @@ export default function ProductListItem({ item }: ProductListItemProps) {
         </article>
     );
 }
+
+export default React.memo(ProductListItem);

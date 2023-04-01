@@ -1,3 +1,4 @@
+import React from 'react';
 import { useResize } from '../../../../hooks/useResize';
 import { useAppDispatch } from '../../../../redux/hooks';
 import InputRadio from '../../../../UI/inputs/inputRadio/InputRadio';
@@ -10,8 +11,7 @@ interface FilterListColumnProps {
     dataList: string[]
 }
 
-
-export default function FilterListColumn({ nameFilter, dataList }: FilterListColumnProps) {
+ function FilterListColumn({ nameFilter, dataList }: FilterListColumnProps) {
     const size = useResize();
     const dispatch = useAppDispatch();
 
@@ -40,3 +40,5 @@ export default function FilterListColumn({ nameFilter, dataList }: FilterListCol
         </div>
     );
 }
+
+export default React.memo(FilterListColumn);
