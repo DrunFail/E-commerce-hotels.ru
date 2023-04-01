@@ -51,17 +51,17 @@ export default function Header() {
                     {size > 800 &&
                         <>
 
-                        <HeaderCurrentShop />
-                        <HeaderEmailFeedback imgStatus={true} />
-                        <Navbar menu={nav_menu} />
+                            <HeaderCurrentShop />
+                            <HeaderEmailFeedback imgStatus={true} />
+                            <Navbar menu={nav_menu} />
                         </>}
 
                     {size <= 800 &&
                         <>
-                        <ButtonBurger onClick={toggleMenu} status={showMobileMenu} />
+                            <ButtonBurger onClick={toggleMenu} status={showMobileMenu} />
                             <Logo />
-                        <HeaderCartBlock />
-                        {showMobileMenu && <MobileMenu />}
+                            <HeaderCartBlock />
+                            {showMobileMenu && <MobileMenu />}
                         </>
                     }
 
@@ -89,7 +89,7 @@ export default function Header() {
 
                             <CallbackBlock />
 
-                            <ButtonDownload color='orange'/>
+                            <ButtonDownload color='orange' />
 
                             <HeaderCartBlock />
                         </>}
