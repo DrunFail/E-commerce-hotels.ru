@@ -1,0 +1,128 @@
+.item {
+    display: grid;
+    grid-template-areas: 'img text count price del';
+    block-size: 291px;
+    grid-template-columns: 2.8fr 4.8fr 2fr 2fr 1fr;
+    padding-block: 50px;
+    align-items: center;
+    border-block-end: 1px dashed rgba(63, 78, 101, 0.3);
+
+    img {
+        grid-area: img;
+        max-inline-size: 100%;
+        block-size: auto;
+        aspect-ratio: 281/191;
+        object-fit: contain;
+        justify-self: center;
+    }
+
+    .text {
+        grid-area: text;
+        align-self: flex-start;
+        padding-inline-end: 30px;
+
+        .volume {
+            display: flex;
+            column-gap: 5px;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--clr-dark-blue);
+
+            svg {
+                inline-size: 15px;
+                block-size: 15px;
+            }
+        }
+
+        .mainTitle {
+            font-size: 30px;
+            line-height: 36px;
+            font-weight: 700;
+            block-size: 72px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .description {
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--clr-dark-blue);
+            
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+    }
+    .counter{
+        grid-area: count;
+    }
+
+
+    .price{
+        grid-area: price;
+        font-size: 30px;
+        line-height: var(--lh-second);
+        color: var(--clr-black);
+        font-weight: 700;
+    }
+    .remove{
+        grid-area: del;
+    }
+}
+@media only screen and (max-width: 85em){
+    .item {
+        .text {
+            .mainTitle {
+                font-size: clamp(20px, 3vw, 30px);
+            }
+        }
+
+        .price {
+            font-size: clamp(20px, 2.5vw, 30px);
+        }
+    }
+}
+@media only screen and (max-width: 50em){
+    .item {
+        aspect-ratio: 290/476;
+        max-inline-size: 100%;
+        grid-template-areas: 'img img img' 'text text text' 'count price del';
+        grid-template-columns: 1fr;
+        block-size: auto;
+        grid-template-rows: 4.3fr 4.5fr 1fr;
+        max-inline-size: 390px;
+        row-gap: 10px;
+        padding-block:20px;
+        column-gap: 15px;
+        row-gap: 10px;
+        
+
+        img {
+            max-inline-size: 100%;
+            block-size: auto;
+            aspect-ratio: 290/197;
+            object-fit: contain;
+        }
+
+        .text {
+            display: grid;
+            row-gap: 10px;
+            .mainTitle {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: var(--lh-special);
+                block-size: auto;
+            }
+        }
+
+        .price {
+            font-size: 16px;
+            border-inline: 1px dashed rgba(63, 78, 101, 0.2);
+            padding-inline: 15px;
+        }
+    }
+}

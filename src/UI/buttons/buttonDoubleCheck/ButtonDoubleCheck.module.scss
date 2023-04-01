@@ -1,0 +1,12 @@
+@import '../../../styles/mixins';
+
+.button {
+    @include primary-button;
+    inline-size: 59px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    svg{
+        inline-size: 24px;
+        aspect-ratio: 1/1;
+    }
+}

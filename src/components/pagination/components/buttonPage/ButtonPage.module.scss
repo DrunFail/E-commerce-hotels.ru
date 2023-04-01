@@ -1,0 +1,18 @@
+.false {
+    border: none;
+    background-color: transparent;
+    color: var(--clr-dark-blue);
+    font-size: 14px;
+    line-height: var(--lh-second);
+    cursor: pointer;
+    inline-size: 35px;
+    block-size: 35px;
+    text-align: center;
+}
+
+
+.true {
+    @extend .false;
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+    border-radius: 50%;
+}

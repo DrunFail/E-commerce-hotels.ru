@@ -1,0 +1,14 @@
+.button{
+    inline-size: 39px;
+    block-size: 39px;
+    border-radius: 50%;
+    background-color: var(--clr-green);
+    border: none;
+    display: inline-grid;
+    place-content: center;
+
+    svg{
+        inline-size: 23px;
+        block-size: 23px;
+    }
+}

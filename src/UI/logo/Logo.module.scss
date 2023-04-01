@@ -1,0 +1,30 @@
+.logo {
+    inline-size: clamp(6.06rem, 10vw, 9.75rem);
+
+    a {
+        display: inline-block;
+
+        svg {
+            max-inline-size: 100%;
+            height: 66px;
+            fill: var(--clr-dark-blue);
+        }
+    }
+}
+
+@media only screen and (max-width: 50em) {
+    .logo {
+        inline-size: 97px;
+        justify-self: center;
+
+        & > a {
+            display: inline-block;
+
+            & > svg {
+                height: 41px;
+                
+                
+            }
+        }
+    }
+}

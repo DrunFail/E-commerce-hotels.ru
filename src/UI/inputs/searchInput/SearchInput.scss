@@ -1,0 +1,43 @@
+$width-container: 238px;
+$height-container: 59px;
+
+$btn-size: 39px;
+$btn-right-pos: 10px;
+$svg-size: 20px;
+
+
+.search-input {
+    block-size: $height-container;
+    inline-size: $width-container;
+    position: relative;
+    input {
+        block-size: 100%;
+        inline-size: 100%;
+        border-radius: 80px;
+        border: none;
+        background-color: var(--clr-grey);
+        padding-inline: 20px $btn-size + $btn-right-pos + 10px;
+    }
+
+    .button-container {
+        position: absolute;
+        right: $btn-right-pos;
+        top:calc(50% - $btn-size/2);
+        button {
+            position: relative;
+            block-size: $btn-size;
+            inline-size: $btn-size;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+
+            svg {
+                position: absolute;
+                inline-size: $svg-size;
+                block-size: $svg-size;
+                stroke: white;
+            }
+        }
+    }
+}

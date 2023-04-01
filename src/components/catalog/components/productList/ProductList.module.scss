@@ -1,0 +1,15 @@
+.section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    row-gap: 10px;
+    margin-inline: auto;
+    column-gap: 21px;
+}
+
+@media only screen and (max-width: 50em){
+    .section{
+        justify-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, 290px);
+    }
+}

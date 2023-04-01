@@ -1,0 +1,46 @@
+
+.container {
+    position: absolute;
+    top: 113px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+
+    .mobileHeader {
+        background-color: var(--clr-white);
+        display: grid;
+        justify-content: flex-start;
+        padding-inline: 15px;
+        padding-block: 20px 32px;
+        row-gap: 15px;
+        z-index: 1;
+
+        .menu {
+            display: grid;
+            row-gap: 25px;
+            justify-content: flex-start;
+            padding-block-start: 25px;
+
+            & > p {
+                font-size: 20px;
+                font-weight: 600;
+                color: var(--clr-dark-blue);
+            }
+        }
+
+        .line {
+            padding-block-start: 25px;
+            border-block-end: 1px dashed rgba(63, 78, 101, .2);
+        }
+
+        & > a {
+            max-inline-size: 400px;
+            inline-size: 100%;
+            block-size: 70px;
+            font-size: 14px;
+        }
+    }
+}

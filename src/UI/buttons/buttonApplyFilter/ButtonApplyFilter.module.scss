@@ -1,0 +1,8 @@
+@import '../../../styles/mixins';
+
+.button{
+    @include primary-button;
+    inline-size: 169px;
+    block-size: 59px;
+    border-radius: 79px;
+}

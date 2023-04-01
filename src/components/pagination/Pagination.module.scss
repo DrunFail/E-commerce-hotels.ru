@@ -1,0 +1,20 @@
+.container{
+    inline-size: 234px;
+    block-size: 35px;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 35px;
+    margin-inline: auto;
+    padding-block: 50px 68px;
+
+    .pages{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 50em){
+    .container{
+        padding-block:45px 70px;
+    }
+}

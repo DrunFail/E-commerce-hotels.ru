@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    font-size: 14px;
+    font-weight: 300;
+    column-gap: 5px;
+    padding-block: 50px;
+
+    & > a {
+        color: var(--clr-dark-blue);
+        padding-inline: 10px;
+    }
+
+
+
+    a:not(:last-child) {
+        border-inline-end: 1px dashed rgba(63, 78, 101, 0.3);
+    }
+
+    a:last-child {
+        opacity: 0.5;
+    }
+}
