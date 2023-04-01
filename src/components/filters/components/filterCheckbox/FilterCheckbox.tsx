@@ -1,3 +1,4 @@
+import React from "react";
 import {useRef, useState } from "react";
 import { useResize } from "../../../../hooks/useResize";
 import { useAppDispatch } from "../../../../redux/hooks";
@@ -19,7 +20,7 @@ const DESKTOP_LIMIT_MENU_ITEMS= 4;
 const MOBILE_LIMIT_MENU_ITEMS = 2;
 
 
-export default function FilterCheckbox({ filterName, dataList}: FilterCheckboxProps) {
+function FilterCheckbox({ filterName, dataList}: FilterCheckboxProps) {
     const size = useResize();
     const limit = size < 800
         ? MOBILE_LIMIT_MENU_ITEMS
@@ -85,3 +86,5 @@ export default function FilterCheckbox({ filterName, dataList}: FilterCheckboxPr
         </fieldset>
     );
 }
+
+export default React.memo(FilterCheckbox);

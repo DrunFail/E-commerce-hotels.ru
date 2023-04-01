@@ -1,3 +1,4 @@
+import React from 'react';
 import { useAppDispatch } from '../../../../redux/hooks';
 import { changePriceFrom, changePriceTo } from '../../redux/filterSlice';
 import styles from './FilterPrice.module.scss';
@@ -7,7 +8,7 @@ interface PriceFilterProps {
     price: { from: string, to: string }
 }
 
-export default function PriceFilter({ price }: PriceFilterProps) {
+function PriceFilter({ price }: PriceFilterProps) {
     const dispatch = useAppDispatch();
 
     const handlePriceFrom = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,5 +41,5 @@ export default function PriceFilter({ price }: PriceFilterProps) {
     );
 }
 
-
+export default React.memo(PriceFilter);
 
