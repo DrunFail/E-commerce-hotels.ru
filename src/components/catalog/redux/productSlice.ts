@@ -50,10 +50,6 @@ export const { addNewProduct,
     deleteProduct,
 } = productSlice.actions
 
-export const selectProduct = (state: RootState) => state.product;
 
-export const selectProductById = (state: RootState, id: number) => state.product.find(elem => elem.code === id);
-
-export const selectProductTitleById = (state: RootState, id: number) => state.product.find(elem => elem.code === id)?.title;
 
 export default productSlice.reducer

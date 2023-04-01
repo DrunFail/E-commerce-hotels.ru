@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import ButtonRemove from '../../../UI/buttons/buttonRemove/ButtonRemove';
-import { deleteProduct, selectProduct } from '../../catalog/redux/productSlice';
+import { deleteProduct} from '../../catalog/redux/productSlice';
+import { selectProduct } from '../../catalog/redux/selectors';
 import './AdminPanel.scss';
 
 export default function AdminPanel() {

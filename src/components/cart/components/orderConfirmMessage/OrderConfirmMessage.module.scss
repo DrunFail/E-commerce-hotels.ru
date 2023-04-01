@@ -1,6 +1,6 @@
 .success {
     position: absolute;
-    inline-size: 735px;
+    max-inline-size: 735px;
     block-size: 424px;
     background-color: var(--clr-white);
     z-index: 1;
@@ -11,21 +11,40 @@
     justify-items: center;
     border-radius: 8px;
 
+    svg{
+        fill: var(--clr-yellow);
+    }
+
     h4 {
         font-size: 40px;
-        line-height: 1.2;
+        line-height: var(--lh-special);
         font-weight: 500;
         color: var(--clr-black);
     }
 
     p {
         font-size: 20px;
-        line-height: 1.2;
+        line-height: var(--lh-special);
         font-weight: 300;
         color: var(--clr-dark-blue);
     }
 
     a {
         justify-self: flex-end;
+    }
+}
+
+@media only screen and (max-width: 50em){
+    .success{
+        inline-size: calc(100vw - 30px);
+
+        h4{
+            font-size: clamp(20px,3vw, 40px);
+        }
+        p{
+            font-size: clamp(16px,2.8vw, 20px);
+            max-width: 28ch;
+            text-align: center;
+        }
     }
 }

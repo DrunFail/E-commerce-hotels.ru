@@ -1,21 +1,47 @@
-import { useState } from "react";
-import { useAppSelector } from "../../../redux/hooks";
+import { useEffect, useState } from "react";
+import { getListFilter } from "../../../fakeData/helpers";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { ProductItem } from "../../catalog/interfaces/interfaces";
-import { selectFilter } from "../redux/filterSlice";
+import { setBrandList, setControlBrand, setControlManufacturer, setManufacturerList } from "../redux/filterSlice";
+import { selectBrandFilter, selectFilter, selectManufactFilter } from "../redux/selectors";
 
 export default function useFilter(productList:ProductItem[]) {
     const filter = useAppSelector(selectFilter);
+    const brandList = useAppSelector(selectBrandFilter);
+    const manufactList = useAppSelector(selectManufactFilter);
     const [check, setCheck] = useState(0);
     const [renderedData, setRenderedData] = useState<ProductItem[]>([]);
+    const dispatch = useAppDispatch();
+
+
+    //вычисление и установка фильтров для brand и manufacturer
+    useEffect(() => {
+        const filtersManufact = getListFilter(productList, 'manufacturer','brand');
+        const filterBrand = getListFilter(productList, 'brand', 'manufacturer');
+        
+        dispatch(setManufacturerList(filtersManufact));
+        dispatch(setControlManufacturer(filtersManufact));
+
+        dispatch(setBrandList(filterBrand));
+        dispatch(setControlBrand(filterBrand));
+        
+    }, [])
+
+
 
     const filterPrice = (arr: ProductItem[]) => {
         let result: ProductItem[] = [];
+
+
         if (filter.price.from || filter.price.to) {
             if (filter.price.from) {
-                result = arr.filter(item => item.price >= +filter.price.from)
+                result = arr.filter(item => item.price >= +filter.price.from && item.price <= +filter.price.to)
             }
-            if (filter.price.to) {
+            if (filter.price.from && filter.price.to) {
                 result = result.filter(item => item.price <= +filter.price.to)
+            }
+            if (!filter.price.from && filter.price.to) {
+                result = arr.filter(item => item.price <= +filter.price.to)
             }
             return result;
 
@@ -29,6 +55,14 @@ export default function useFilter(productList:ProductItem[]) {
         let result: ProductItem[] = [];
         if (filter.brandFilter.length > 0) {
             result = arr.filter(elem => filter.brandFilter.includes(elem.brand));
+            let newFilter = manufactList.filter(elem => {
+                let x = elem.filters.filter(item => filter.brandFilter.includes(item))
+                if (x.length) return 1;
+                return 0;
+               
+
+            })
+            dispatch(setManufacturerList(newFilter));
             return result;
         } else {
             return arr;
@@ -39,6 +73,14 @@ export default function useFilter(productList:ProductItem[]) {
         let result: ProductItem[] = [];
         if (filter.manufacturerFilter.length > 0) {
             result = arr.filter(elem => filter.manufacturerFilter.includes(elem.manufacturer))
+            let newFilter = brandList.filter(elem => {
+                let x = elem.filters.filter(item => filter.manufacturerFilter.includes(item))
+                if (x.length) return 1;
+                return 0;
+                
+
+            })
+            dispatch(setBrandList(newFilter))
             return result
         } else {
             return arr;
@@ -77,30 +119,35 @@ export default function useFilter(productList:ProductItem[]) {
 
 
 
-
+    //проверка фильтра
     const checkRender = (arr: ProductItem[]) => {
-        let result: ProductItem[] = []
+        let result: ProductItem[] = [];
+
+        //когда запущен новый поиск без сброса
         if (filter.status > check) {
-            result = filterManufact(filterBrand(filterPrice(productList)))
-            setRenderedData(result)
-            setCheck(filter.status)
+            result = filterManufact(filterBrand(filterPrice(arr)));
+            setRenderedData(result);
+            setCheck(filter.status);
             
             return result;
         }
 
+        //был сброс параметров фильтра
         if (check > filter.status && !filter.status) {
-            result = productList;
-            setCheck(filter.status)
             
-            return result;
+            setCheck(filter.status);
+            
+            return arr;
         }
+
+        //начальное состояние
         if (!check && !filter.status) {
            
-            return productList
+            return arr;
         }
         else {
            
-            return renderedData
+            return renderedData;
         }
 
     }

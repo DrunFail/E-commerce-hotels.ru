@@ -13,8 +13,8 @@ interface ProductListItemProps {
 
 
 export default function ProductListItem({ item }: ProductListItemProps) {
-
-    const { status } = useCartTotalPrice(item.code)
+    //есть ли товар в корзине
+    const { status } = useCartTotalPrice(item.code);
     
 
     return (

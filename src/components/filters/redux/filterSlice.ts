@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getListFilter} from '../../../fakeData/helpers';
-import { RootState } from '../../../redux/store/store';
-import { MainFilter } from './interfaces';
+import { CheckboxFilter, MainFilter } from './interfaces';
 
 
 
 const initialState: MainFilter = {
     price: { from: '', to: '' },
-    manufacturerFilter: getListFilter('manufacturer'),
-    brandFilter: getListFilter('brand'),
+    controlManufacturer: [],
+    controlBrand: [],
+    manufacturerFilter: [],
+    brandFilter: [],
     typeCare: '',
-    sortBy:'',
+    sortBy: '',
     status: 0
 }
 
@@ -20,19 +20,19 @@ export const filterSlice = createSlice({
     initialState,
     reducers: {
 
-        changeCheckedStatus(state, action: PayloadAction<{ filterName:string, name: string }>) {
+        changeCheckedStatus(state, action: PayloadAction<{ filterName: string, name: string }>) {
             const field = action.payload.filterName === 'Производитель'
                 ? 'manufacturerFilter'
                 : 'brandFilter';
-            
+
             const checkedItem = state[field].find(elem => elem.name === action.payload.name);
-                if (checkedItem) {
-                    checkedItem.checked = !checkedItem.checked
-                }
-               
+            if (checkedItem) {
+                checkedItem.checked = !checkedItem.checked
+            }
+
         },
 
-        addTypeCareFilter(state, action: PayloadAction<{ value:string }>) {
+        addTypeCareFilter(state, action: PayloadAction<{ value: string }>) {
             state.typeCare = action.payload.value
         },
 
@@ -40,7 +40,7 @@ export const filterSlice = createSlice({
             state.sortBy = action.payload.value
         },
 
-        changePriceFrom(state, action: PayloadAction<{value: string}>) {
+        changePriceFrom(state, action: PayloadAction<{ value: string }>) {
             state.price.from = action.payload.value
         },
 
@@ -50,18 +50,34 @@ export const filterSlice = createSlice({
 
         toggleFilterStatus(state) {
             state.status = state.status + 1
-            
+
+        },
+
+        setManufacturerList(state, action: PayloadAction<CheckboxFilter[]>) {
+            state.manufacturerFilter = action.payload;
+
+        },
+        setBrandList(state, action: PayloadAction<CheckboxFilter[]>) {
+
+            state.brandFilter = action.payload;
+
+        },
+        setControlManufacturer(state, action: PayloadAction<CheckboxFilter[]>) {
+            state.controlManufacturer = action.payload;
+        },
+        setControlBrand(state, action: PayloadAction<CheckboxFilter[]>) {
+            state.controlBrand = action.payload;
         },
 
         resetFilterStatus(state) {
             state.status = 0;
             state.price.from = '';
             state.price.to = '';
-            state.brandFilter.map(elem => elem.checked = false);
-            state.manufacturerFilter.map(elem => elem.checked = false);
+            state.brandFilter = state.controlBrand;
+            state.manufacturerFilter = state.controlManufacturer;
         },
 
-       
+
     },
 
 })
@@ -72,32 +88,14 @@ export const { changeCheckedStatus,
     toggleFilterStatus,
     resetFilterStatus,
     addTypeCareFilter,
-    addTypeSort
-    
-    
+    addTypeSort,
+    setManufacturerList,
+    setBrandList,
+    setControlManufacturer,
+    setControlBrand
+
+
 } = filterSlice.actions
-
-export const selectFilter = (state: RootState) => {
-    const filteredManufact:string[] = []
-    state.filter.manufacturerFilter.map(elem => { if (elem.checked) filteredManufact.push(elem.name)});
-    const filteredBrand:string[] = []
-
-    state.filter.brandFilter.map(elem => { if (elem.checked) filteredBrand.push(elem.name) });
-    const priceFilter = state.filter.price;
-
-    return {
-        price: priceFilter,
-        manufacturerFilter: filteredManufact,
-        brandFilter: filteredBrand,
-        status: state.filter.status,
-        typeCare: state.filter.typeCare,
-        sortBy: state.filter.sortBy
-    }
-
-};
-export const selectManufactFilter = (state: RootState) => state.filter.manufacturerFilter;
-export const selectBrandFilter = (state: RootState) => state.filter.brandFilter;
-export const selectPriceFilter = (state: RootState) => state.filter.price;
 
 
 export default filterSlice.reducer

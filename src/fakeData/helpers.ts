@@ -1,20 +1,23 @@
+import { ProductItem } from '../components/catalog/interfaces/interfaces';
 import data from './data.json';
 
-export const getListFilter = (field: 'manufacturer' | 'brand') => {
+export const getListFilter = (arr: ProductItem[], field: 'manufacturer' | 'brand', secField: 'manufacturer' | 'brand' ) => {
 
-    const x: { name: string, count: number, checked: boolean }[] = []
+    const x: { name: string, count: number, filters:string[] , checked: boolean }[] = []
 
     Next:
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
 
         for (let j = 0; j < x.length; j++) {
-            if (x[j].name.toLowerCase() == data[i][field].toLowerCase()) {
+            if (x[j].name.toLowerCase() == arr[i][field].toLowerCase()) {
                 x[j].count++
+                x[j].filters.push(arr[i][secField])
                 continue Next;
             }
         }
-        x.push({ name: data[i][field], count: 1, checked: false });
+        x.push({ name: arr[i][field] , count: 1, filters: [arr[i][secField]], checked: false });
     }
+    
     return x
 }
 
@@ -41,9 +44,7 @@ const getListBrand = () => {
     return x
 }
 
-const brandList = getListBrand();
-const manufactList = getListFilter('manufacturer');
 
 
 
-export { manufactList, brandList};
+

@@ -28,6 +28,7 @@ export default function Pagination({pageCount, currentPage, toggleCurrentPage, n
 
                 return (
                     <ButtonPage
+                        key={page }
                         page={page}
                         currentStatus={currentPage === page}
                         toggleCurrentPage={toggleCurrentPage }
