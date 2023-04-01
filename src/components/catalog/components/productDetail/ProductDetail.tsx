@@ -36,11 +36,14 @@ export default function ProductDetail() {
                 <div className={styles.title }>
                 <p>В наличии</p>
                 <h1><span>{product.brand}</span> {product.title}</h1>
-                    <VolumeIcon volume={product.volume} size={product.size} sizeUnit={product.sizeUnit} />
+                    <VolumeIcon
+                        volume={product.volume}
+                        size={product.size}
+                        sizeUnit={product.sizeUnit} />
                 </div>
                 <div className={styles.addToCart}>
                     <p>{product.price} ₸</p>
-                    <ButtonCounter />
+                    <ButtonCounter count={5 } />
                     {status
                         ? <ButtonCartInludes />
                         : <ButtonInCart code={product.code} /> }
@@ -51,7 +54,9 @@ export default function ProductDetail() {
                 </div>
                 <div className={styles.promoBlock}>
                     {size < 800 || <ButtonShare />}
-                    <div>При покупке от 10 000 ₸ бесплатная доставка по Кокчетаву и области</div>
+                    <div>
+                        <p>При покупке от 10 000 ₸ бесплатная доставка по Кокчетаву и области</p>
+                    </div>
                     <ButtonDownload color='white' />
                 </div>
 
