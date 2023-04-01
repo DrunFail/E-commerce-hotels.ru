@@ -12,9 +12,7 @@
 - SCSS
 - Webpack
 
-## Preview
 
-- desktop
 
 ## Разработка
 
