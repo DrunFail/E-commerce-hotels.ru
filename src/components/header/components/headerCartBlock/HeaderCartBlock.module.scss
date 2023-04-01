@@ -50,13 +50,13 @@
         grid-template-areas: 'img';
         grid-template-columns: 1fr;
 
-        & > svg {
-            height: 41px;
+        .cartContainer > svg {
+           inline-size: 25px;
             aspect-ratio: 1/1;
         }
 
-        p {
+        
+        & > p{
             display: none;
         }
-    }
-}
+}}
