@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../../../redux/hooks';
+import {useAppSelector } from '../../../../redux/hooks';
 import useFilter from '../../../filters/hooks/useFilter';
 import usePagination from '../../../pagination/hooks/usePagination';
 import Pagination from '../../../pagination/Pagination';
@@ -9,15 +9,19 @@ import styles from './ProductList.module.scss';
 
 export default function ProductList() {
     const productList = useAppSelector(selectProduct);
+
+    //получаем данные для рендера отфильтрованных товаров
     const renderedData = useFilter(productList);
 
+
+    //для пагинации
     const { currentPage,
         from,
         to,
         pageCount,
         toggleCurrentPage,
         prevPage,
-        nextPage } = usePagination({ arr: productList, perPage: 10 });
+        nextPage } = usePagination({ arr: renderedData, perPage: 10 });
 
 
     return (
@@ -30,11 +34,10 @@ export default function ProductList() {
                             key={item.code}
                             item={item} />
                     }
-
                 }
                 )}
-
             </section>
+
             <Pagination
                 pageCount={pageCount}
                 currentPage={currentPage}

@@ -1,11 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useResize } from '../../../../hooks/useResize';
 import { useAppSelector } from '../../../../redux/hooks';
+import ButtonCartInludes from '../../../../UI/buttons/buttonCartIncludes/ButtonCartIncludes';
 import ButtonCounter from '../../../../UI/buttons/buttonCounter/ButtonCounter';
 import ButtonDownload from '../../../../UI/buttons/buttonDownload/ButtonDownload';
 import ButtonInCart from '../../../../UI/buttons/buttonInCart/ButtonInCart';
 import ButtonShare from '../../../../UI/buttons/buttonShare/ButtonShare';
 import VolumeIcon from '../../../../UI/volumeIcon/VolumeIcon';
+import useCartTotalPrice from '../../../cart/hooks/useCartTotalPrice';
 import { selectProductById } from '../../redux/selectors';
 import styles from './ProductDetail.module.scss';
 
@@ -13,15 +15,19 @@ import styles from './ProductDetail.module.scss';
 export default function ProductDetail() {
     const size = useResize();
     const { categoryId } = useParams();
-
+    
+    //пробрасываем ошибку, если не получим код товара
     if (!categoryId) {
-        throw new Error('invalid product id');
+        throw new Error('dont get category id, details');
     }
+    //пробрасываем ошибку, если не получим данные товара из стора 
     const product = useAppSelector(state => selectProductById(state,+categoryId))
     if (!product) {
         throw new Error('dont fetch product by id - details');
     }
 
+    //boolean есть ли товар в корзине - для смены кнопки
+    const { status } = useCartTotalPrice(product.code);
 
     return (
         <div className={styles.product}>
@@ -35,8 +41,10 @@ export default function ProductDetail() {
                 <div className={styles.addToCart}>
                     <p>{product.price} ₸</p>
                     <ButtonCounter />
-
-                    <ButtonInCart code={product.code} />
+                    {status
+                        ? <ButtonCartInludes />
+                        : <ButtonInCart code={product.code} /> }
+                    
                     {size < 800 && <ButtonShare /> }
                     
 

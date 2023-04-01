@@ -42,3 +42,45 @@
         align-items: center;
     }
 }
+@media only screen and (max-width: 85em){
+    .section > h2{
+        font-size: clamp(30px, 2.5vw, 40px);
+    }
+}
+@media only screen and (max-width: 50em){
+    .section {
+        & > h2 {
+            font-size: 20px;
+            padding-block: 25px 20px;
+            line-height: var(--lh-special);
+        }
+
+        .items {
+            display: grid;
+            justify-content: center;
+           
+        }
+
+        .total {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: 'price' 'btn';
+            
+            row-gap: 25px;
+            
+
+            & > a {
+                grid-area: btn;
+                padding-block: 28px;
+                justify-self: center;
+                max-inline-size: 390px;
+                inline-size: 100%;
+            }
+
+            & > p {
+                grid-area: price;
+                justify-self:center;
+            }
+        }
+    }
+}
