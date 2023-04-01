@@ -57,6 +57,7 @@
             align-items: center;
             block-size: 77px;
             margin-block-end: 15px;
+            color: var(--clr-dark-blue);
 
             div {
                 block-size: 100%;
@@ -64,6 +65,15 @@
                 display: flex;
                 align-items: center;
                 box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+            }
+
+            a{display:inline-flex;
+                color: inherit;
+                column-gap: 10px;
+
+                & svg{
+                    fill: var(--clr-dark-blue);
+                }
             }
         }
 
@@ -76,6 +86,7 @@
                 color: var(--clr-dark-blue);
 
                 span {
+                    padding-inline-start: 5px;
                     font-weight: 500;
                     color: var(--clr-black);
                 }
@@ -133,10 +144,39 @@
                 grid-auto-flow: row;
                 grid-template-rows: max-content 59px;
                 row-gap: 20px;
+
+                & button:nth-child(3) {
+                    inline-size: 100%;
+                    max-inline-size: 184px;
+                    block-size: 59px;
+                }
+
+                & button:nth-child(4) {
+                    justify-self: center;
+                    box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+                    border-radius: 10px;
+                }
             }
 
             .promoBlock {
                 grid-template-columns: max-content max-content;
+                grid-template-rows: max-content max-content;
+                block-size: auto;
+
+                & > div {
+                    padding: 20.5px 22.5px;
+                    max-inline-size: 100%;
+
+                    p {
+                        text-align: center;
+                        max-width: 34ch;
+                    }
+                }
+
+                & > a {
+                    inline-size: 100%;
+                    block-size: 77px;
+                }
 
                 @media only screen and (max-width: 35em) {
                     grid-template-columns: 1fr;
