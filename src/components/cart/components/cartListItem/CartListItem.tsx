@@ -1,13 +1,13 @@
-import styles from './CartListItem.module.scss';
-import SpriteIcon from '../../../spriteIcon/SpriteIcon';
-import ButtonRemove from '../../../../UI/buttons/buttonRemove/ButtonRemove';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
+import ButtonCounter from '../../../../UI/buttons/buttonCounter/ButtonCounter';
+import ButtonRemove from '../../../../UI/buttons/buttonRemove/ButtonRemove';
+import { SizeUnit, VolumeType } from '../../../catalog/interfaces/interfaces';
+import { selectProductById } from '../../../catalog/redux/selectors';
+import SpriteIcon from '../../../spriteIcon/SpriteIcon';
 import { ShoppingCartItem } from '../../interface/interfaces';
 import { decrementCartItem, deleteCartItem, incrementCartItem } from '../../redux/cartSlice';
-import ButtonCounter from '../../../../UI/buttons/buttonCounter/ButtonCounter';
-import { selectProductById } from '../../../catalog/redux/selectors';
-import { SizeUnit, VolumeType } from '../../../catalog/interfaces/interfaces';
-import React from 'react';
+import styles from './CartListItem.module.scss';
 
 
 interface CartListItemProps {
@@ -53,7 +53,7 @@ interface CartListItemProps {
                         : <SpriteIcon id='box' />}
                     <p>{productItem.size} {volume ? SizeUnit.bottle : SizeUnit.box}</p>
                 </div>
-                <p className={styles.mainTitle}>{productItem.brand} {productItem.title}</p>
+                <p data-testid="cart-item-title" className={styles.mainTitle}>{productItem.brand} {productItem.title}</p>
                 <p className={styles.description}>{productItem.description}</p>
             </div>
             <div className={styles.counter}>

@@ -1,4 +1,4 @@
-export interface ShoppingCartItem{
-	code: number,
-count: number
+export interface ShoppingCartItem {
+    code: number,
+    count: number
 }
