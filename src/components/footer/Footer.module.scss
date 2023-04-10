@@ -132,6 +132,16 @@
         grid-template-columns: repeat(2, minmax(max-content, 1fr));
     }
 }
+@media only screen and (max-width: 60em){
+    .footer .container .content{
+        row-gap: 40px;
+        nav{
+            grid-column: 1/-1;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
 
 @media only screen and (max-width: 50em) {
     .footer .container {
