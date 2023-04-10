@@ -5,8 +5,8 @@
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: max-content;
-        column-gap: clamp(1rem,5vw, 5rem);
-        font-size: clamp(0.6rem, 1vw, 0.875rem);
+        column-gap: clamp(1rem,3vw, 3.75rem);
+        font-size: clamp(0.75rem, 1vw, 0.875rem);
         
 
         & li a {

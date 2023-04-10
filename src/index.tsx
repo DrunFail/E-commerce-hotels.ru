@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import { createHashRouter, RouterProvider, } from "react-router-dom";
 import './styles/index.scss';
 import CatalogPage from './components/catalog/pages/CatalogPage';
 import Layout from './components/layout/Layout';
@@ -14,7 +14,7 @@ import PageNavigation from './components/pageNavigation/PageNavigation';
 import ErrorPage from './components/errorPage/ErrorPage';
 import EditProduct from './components/admin/editProduct/EditProduct';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <Layout />,

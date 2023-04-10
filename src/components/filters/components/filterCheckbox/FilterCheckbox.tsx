@@ -51,7 +51,7 @@ function FilterCheckbox({ filterName, dataList}: FilterCheckboxProps) {
     }
 
     return (
-        <fieldset onSubmit={(e) => e.preventDefault() } className={styles.filter }>
+        <fieldset onSubmit={(e) => e.preventDefault()} className={styles.filter} id={filterName }>
             <legend>{filterName}</legend>
 
             <SearchInput

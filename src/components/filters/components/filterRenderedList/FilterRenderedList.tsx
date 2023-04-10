@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
 import ButtonApplyFilter from "../../../../UI/buttons/buttonApplyFilter/ButtonApplyFilter";
 import ButtonArrowRight from "../../../../UI/buttons/buttonArrowRight/ButtonArrowRight";
 import ButtonRemove from "../../../../UI/buttons/buttonRemove/ButtonRemove";
-import { filterOptions, handCareList } from "../../constants";
+import { filterOptions, handCareList } from "../../constants/constants";
 import { resetFilterStatus } from "../../redux/filterSlice";
 import { selectBrandFilter, selectManufactFilter, selectPriceFilter } from "../../redux/selectors";
 import FilterCheckbox from "../filterCheckbox/FilterCheckbox";

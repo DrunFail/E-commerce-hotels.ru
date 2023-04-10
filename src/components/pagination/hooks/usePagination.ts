@@ -23,11 +23,13 @@ export default function usePagination({arr, perPage }: usePaginationProps) {
     }
 
     const nextPage = () => {
+        if (currentPage === pageCount) return;
         setCurrentPage(currentPage => currentPage + 1);
         window.scrollTo(0,0);
     }
 
     const prevPage = () => {
+        if (currentPage === 1) return;
         setCurrentPage(currentPage => currentPage - 1);
         window.scrollTo(0, 0);
     }

@@ -1,0 +1,21 @@
+.header {
+
+    &_top, &_bottom {
+        max-inline-size: var(--max-width);
+        margin-inline: auto;
+        display: grid;
+    }
+
+    &_top {
+        grid-template-columns: max-content max-content 1fr;
+        column-gap: clamp(.5rem,3vw, 2.5rem);
+        padding-block: 14px;
+        align-items: center;
+    }
+
+    &_bottom {
+        grid-auto-flow: column;
+        align-items: center;
+        block-size: 107px;
+    }
+}

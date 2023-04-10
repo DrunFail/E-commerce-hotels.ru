@@ -31,8 +31,8 @@ function ProductListItem({ item }: ProductListItemProps) {
             <Link to={`${item.code}`}><span>{item.brand}</span> {item.title}</Link>
             <div className={styles.details}>
                 <p>Штрихкод: <span>{item.code}</span></p>
-                <p>Производитель: <span>{item.manufacturer}</span></p>
-                <p>Бренд: <span>{item.brand}</span></p>
+                <p data-test='manufacturer'>Производитель: <span>{item.manufacturer}</span></p>
+                <p data-test='brand'>Бренд: <span>{item.brand}</span></p>
                 <div className={styles.typeCare}>Тип ухода: <div className={styles.items }>{item.typeCare.map((elem, index) => <span key={index}>{elem}</span>)}</div></div>
             </div>
             <div className={styles.price}>
