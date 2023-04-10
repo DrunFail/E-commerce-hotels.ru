@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/E-commerce-hotels.ru/static/css/main.e4807eea.css",
-    "main.js": "/E-commerce-hotels.ru/static/js/main.2b7d8cd1.js",
+    "main.css": "/E-commerce-hotels.ru/static/css/main.5f07662b.css",
+    "main.js": "/E-commerce-hotels.ru/static/js/main.b85e52a5.js",
     "static/media/sprite.svg": "/E-commerce-hotels.ru/static/media/sprite.b8c1c6ba53ddde50ace6d808d770c8a5.svg",
     "static/media/inter-v12-cyrillic_latin-700.woff": "/E-commerce-hotels.ru/static/media/inter-v12-cyrillic_latin-700.fde0b548bdfd88ac57cf.woff",
     "static/media/inter-v12-cyrillic_latin-600.woff": "/E-commerce-hotels.ru/static/media/inter-v12-cyrillic_latin-600.5e2aa84562f3db1b1af8.woff",
@@ -14,11 +14,11 @@
     "static/media/inter-v12-cyrillic_latin-300.woff2": "/E-commerce-hotels.ru/static/media/inter-v12-cyrillic_latin-300.d22c49d34a92a601b0fd.woff2",
     "static/media/inter-v12-cyrillic_latin-regular.woff2": "/E-commerce-hotels.ru/static/media/inter-v12-cyrillic_latin-regular.b0a21561d96f6b662763.woff2",
     "index.html": "/E-commerce-hotels.ru/index.html",
-    "main.e4807eea.css.map": "/E-commerce-hotels.ru/static/css/main.e4807eea.css.map",
-    "main.2b7d8cd1.js.map": "/E-commerce-hotels.ru/static/js/main.2b7d8cd1.js.map"
+    "main.5f07662b.css.map": "/E-commerce-hotels.ru/static/css/main.5f07662b.css.map",
+    "main.b85e52a5.js.map": "/E-commerce-hotels.ru/static/js/main.b85e52a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4807eea.css",
-    "static/js/main.2b7d8cd1.js"
+    "static/css/main.5f07662b.css",
+    "static/js/main.b85e52a5.js"
   ]
 }
