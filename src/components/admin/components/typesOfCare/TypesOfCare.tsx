@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useState } from "react";
 import useOutsideClick from "../../../../hooks/useOutsideClick";
 import { useAppDispatch } from "../../../../redux/hooks";
-import { filterOptions } from "../../../filters/constants";
+import { filterOptions } from "../../../filters/constants/constants";
 import styles from './TypesOfCare.module.scss';
 
 interface TypesOfCareProps {
