@@ -2,7 +2,8 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useResize } from "../../hooks/useResize";
 import BreadCrumbs from "../breadCrumbs/BreadCrumbs";
 import Footer from "../footer/Footer";
-import Header from "../header/Header";
+import DesktopHeader from "../header/pages/desktopHeader/DesktopHeader";
+import MobileHeader from "../header/pages/mobileHeader/MobileHeader";
 
 export default function Layout() {
     const size = useResize();
@@ -10,7 +11,10 @@ export default function Layout() {
 
     return (
         <>
-            <Header />
+            {size > 800
+                ? <DesktopHeader />
+                : <MobileHeader />}
+
             <main>
                 {size < 800 || (location.pathname !== '/' && <BreadCrumbs />)}
                 <Outlet />
