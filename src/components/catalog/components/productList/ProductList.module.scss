@@ -13,3 +13,10 @@
         grid-template-columns: repeat(auto-fit, 290px);
     }
 }
+
+@media only screen and (max-width: 30em){
+    .section {
+        
+        grid-template-columns: repeat(auto-fit, 350px);
+    }
+}
