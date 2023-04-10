@@ -1,0 +1,19 @@
+.header {
+
+
+    &_top {
+        display: grid;
+        grid-template-columns: max-content 1fr max-content;
+        align-items: center;
+        block-size: 61px;
+        padding-inline: 15px;
+        padding-block: 10px;
+    }
+
+    &_bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        block-size: 40px;
+        padding-inline: 15px;
+    }
+}

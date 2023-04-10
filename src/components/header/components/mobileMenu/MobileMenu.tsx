@@ -1,32 +1,10 @@
 import ButtonDownload from "../../../../UI/buttons/buttonDownload/ButtonDownload";
-import ContactsBlock from "../../../footer/components/contactsBlock/ContactsBlock";
-import CallbackBlock from "../callbackBlock/CallbackBlock";
+import { NAV_MENU } from "../../constants/constants";
 import HeaderCurrentShop from "../headerCurrentShop/HeaderCurrentShop";
 import HeaderEmailFeedback from "../headerEmailFeedback/HeaderEmailFeedback";
 import MobileCallbackBlock from "../mobileCallbackBlock/MobileCallbackBlock";
 import Navbar from "../navbar/Navbar";
 import styles from './MobileMenu.module.scss';
-
-const nav_menu = [
-    {
-        name: 'О компании',
-        url: ''
-    },
-    {
-        name: 'Доставка и оплата',
-        url: ''
-    },
-    {
-        name: 'Возврат',
-        url: ''
-    },
-    {
-        name: 'Контакты',
-        url: ''
-    }
-]
-
-
 
 
 export default function MobileMenu() {
@@ -39,7 +17,7 @@ export default function MobileMenu() {
                 <div className={styles.line}></div>
                 <div className={styles.menu}>
                     <p>Меню сайта:</p>
-                    <Navbar menu={nav_menu} />
+                    <Navbar menu={NAV_MENU} />
                 </div>
                 <ButtonDownload color='orange' />
 

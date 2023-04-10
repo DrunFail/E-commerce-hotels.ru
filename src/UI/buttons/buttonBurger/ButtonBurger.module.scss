@@ -1,14 +1,26 @@
 .button {
+    display: inline-grid;
     inline-size: 50px;
     aspect-ratio: 1/1;
     background-color: var(--clr-yellow);
     border: none;
     border-radius: 50%;
+    align-items: center;
+    justify-content: center;
 
     svg {
-        height: 20px;
+        block-size: 20px;
         aspect-ratio: 1/1;
         fill: var(--clr-white);
 
+    }
+}
+@media only screen and (max-width: 50em){
+    .button{
+        inline-size: 32px;
+
+        svg{
+            block-size: 12px;
+        }
     }
 }

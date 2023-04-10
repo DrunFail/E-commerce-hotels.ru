@@ -4,7 +4,7 @@ import { useResize } from "../../../hooks/useResize";
 import Sort from "../../filters/components/sort/Sort";
 import FilterListRow from "../../filters/components/filterListRow/FilterListRow";
 import FilterRenderedList from "../../filters/components/filterRenderedList/FilterRenderedList";
-import { filterOptions } from "../../filters/constants";
+import { filterOptions } from "../../filters/constants/constants";
 
 
 export default function CatalogPage() {

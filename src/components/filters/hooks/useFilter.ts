@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { getListFilter } from "../../../fakeData/helpers";
+
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { ProductItem } from "../../catalog/interfaces/interfaces";
 import { setBrandList, setControlBrand, setControlManufacturer, setManufacturerList } from "../redux/filterSlice";
 import { selectBrandFilter, selectFilter, selectManufactFilter } from "../redux/selectors";
+import { getListFilter } from "../utils/utils";
 
 export default function useFilter(productList:ProductItem[]) {
     const filter = useAppSelector(selectFilter);
